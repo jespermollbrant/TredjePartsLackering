@@ -494,7 +494,7 @@ Exempel på bra förslag: Om kunden skriver "hög finish", fråga om specifik gl
             href="#quote"
             className="btn-brand"
           >
-            Begär Offert
+            Skapa din Offert
           </a>
         </nav>
       </header>
