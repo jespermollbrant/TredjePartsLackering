@@ -98,12 +98,12 @@ export function getFirebaseAdmin() {
             }),
             // Only set storageBucket if provided; avoids implicit defaults that may not exist
             ...(storageBucket ? { storageBucket } : {}),
-          } as any;
+          };
         }
         return {
           credential: applicationDefault(),
           ...(storageBucket ? { storageBucket } : {}),
-        } as any;
+        };
       })()
     );
 
@@ -111,7 +111,7 @@ export function getFirebaseAdmin() {
   const storage = getStorage(app);
   const configuredBucketName = process.env.FIREBASE_STORAGE_BUCKET?.trim();
   // Only return a bucket instance if we have a configured bucket name
-  const bucket = configuredBucketName ? storage.bucket(configuredBucketName) : null as any;
+  const bucket = configuredBucketName ? storage.bucket(configuredBucketName) : null;
 
   return { app: getApp(), db, bucket };
 }

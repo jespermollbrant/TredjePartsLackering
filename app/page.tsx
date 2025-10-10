@@ -1,10 +1,10 @@
 "use client";
 
-import { useEffect, useMemo, useRef, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 
 export default function Page() {
   const [activeTab, setActiveTab] = useState<"powder" | "wet">("powder");
-  const [partnerSearch, setPartnerSearch] = useState("");
+  // const [partnerSearch] = useState("");
   const [showEndCustomer, setShowEndCustomer] = useState(false);
   const [geminiLoading, setGeminiLoading] = useState(false);
   const [geminiVisible, setGeminiVisible] = useState(false);
@@ -54,28 +54,28 @@ export default function Page() {
     }
   }
 
-  const partners = useMemo(
-    () => [
-      { name: "Ytbehandling AB", services: ["Pulver", "Våt"] },
-      { name: "ColorPro Industrilack", services: ["Våt"] },
-      { name: "Malmö Pulverlackering", services: ["Pulver"] },
-      { name: "Norrlands Ytskydd", services: ["Våt", "Blästring"] },
-      { name: "Smålands Komponentlack", services: ["Pulver"] },
-      { name: "Dalarnas Färg & Skydd", services: ["Våt"] },
-      { name: "Västkustens Lackcenter", services: ["Pulver", "Våt"] },
-      { name: "Industriell Finish Syd", services: ["Pulver"] },
-      { name: "Mälardalens Ytbehandling", services: ["Våt"] },
-      { name: "Gävle Industrifärg", services: ["Pulver"] },
-      { name: "Linköpings Lackverkstad", services: ["Våt"] },
-      { name: "Örebro Coating Center", services: ["Pulver", "Våt"] },
-    ],
-    []
-  );
+  // const partners = useMemo(
+  //   () => [
+  //     { name: "Ytbehandling AB", services: ["Pulver", "Våt"] },
+  //     { name: "ColorPro Industrilack", services: ["Våt"] },
+  //     { name: "Malmö Pulverlackering", services: ["Pulver"] },
+  //     { name: "Norrlands Ytskydd", services: ["Våt", "Blästring"] },
+  //     { name: "Smålands Komponentlack", services: ["Pulver"] },
+  //     { name: "Dalarnas Färg & Skydd", services: ["Våt"] },
+  //     { name: "Västkustens Lackcenter", services: ["Pulver", "Våt"] },
+  //     { name: "Industriell Finish Syd", services: ["Pulver"] },
+  //     { name: "Mälardalens Ytbehandling", services: ["Våt"] },
+  //     { name: "Gävle Industrifärg", services: ["Pulver"] },
+  //     { name: "Linköpings Lackverkstad", services: ["Våt"] },
+  //     { name: "Örebro Coating Center", services: ["Pulver", "Våt"] },
+  //   ],
+  //   []
+  // );
 
-  const filteredPartners = useMemo(() => {
-    const term = partnerSearch.toLowerCase();
-    return partners.filter((p) => p.name.toLowerCase().includes(term));
-  }, [partnerSearch, partners]);
+  // const filteredPartners = useMemo(() => {
+  //   const term = partnerSearch.toLowerCase();
+  //   return partners.filter((p) => p.name.toLowerCase().includes(term));
+  // }, [partnerSearch, partners]);
 
   useEffect(() => {
     const canvasEl = canvasRef.current as HTMLCanvasElement | null;
@@ -92,7 +92,7 @@ export default function Page() {
     }
 
     function draw(e: MouseEvent | TouchEvent) {
-      const canvas = canvasEl!;
+      // const canvas = canvasEl!;
       if (currentTool === 'pan') return; // drawing disabled while panning
       if (!isDrawingRef.current || !ctxRef.current) return;
       e.preventDefault();
@@ -223,7 +223,7 @@ export default function Page() {
     };
 
     container.addEventListener("wheel", onWheel, { passive: false });
-    return () => container.removeEventListener("wheel", onWheel as any);
+    return () => container.removeEventListener("wheel", onWheel);
   }, [isModalOpen]);
 
   function applyZoom(next: number) {
@@ -248,68 +248,68 @@ export default function Page() {
     applyZoom(next);
   }
 
-  function handleAnalyze() {
-    setGeminiVisible(true);
-    setGeminiLoading(true);
-    setGeminiHtml("");
-    const quality = (document.getElementById("quality-needs") as HTMLTextAreaElement)?.value || "";
-    const masking = (document.getElementById("masking-info") as HTMLTextAreaElement)?.value || "";
-    const pretreatment = (document.getElementById("pretreatment") as HTMLInputElement)?.value || "";
-    const usageChecked = document.querySelector<HTMLInputElement>('input[name="usage"]:checked');
-    const usage = usageChecked?.value ?? "ej specificerat";
+  // function handleAnalyze() {
+  //   setGeminiVisible(true);
+  //   setGeminiLoading(true);
+  //   setGeminiHtml("");
+  //   const quality = (document.getElementById("quality-needs") as HTMLTextAreaElement)?.value || "";
+  //   const masking = (document.getElementById("masking-info") as HTMLTextAreaElement)?.value || "";
+  //   const pretreatment = (document.getElementById("pretreatment") as HTMLInputElement)?.value || "";
+  //   const usageChecked = document.querySelector<HTMLInputElement>('input[name="usage"]:checked');
+  //   const usage = usageChecked?.value ?? "ej specificerat";
 
-    if (!quality && !masking && !pretreatment) {
-      setGeminiLoading(false);
-      setGeminiHtml(
-        `<p class="text-red-600 font-medium">Vänligen fyll i fälten för kvalitetsbehov, maskering eller förbehandling för att få en analys.</p>`
-      );
-      return;
-    }
+  //   if (!quality && !masking && !pretreatment) {
+  //     setGeminiLoading(false);
+  //     setGeminiHtml(
+  //       `<p class="text-red-600 font-medium">Vänligen fyll i fälten för kvalitetsbehov, maskering eller förbehandling för att få en analys.</p>`
+  //     );
+  //     return;
+  //   }
 
-    const prompt = `En kund fyller i en offertförfrågan för industrilackering. Baserat på informationen nedan, agera som en expert på ytbehandling och ge en kort, punktlista med förslag på förtydliganden eller frågor som hjälper kunden att få en mer exakt offert. Svara på svenska. Håll det vänligt och professionellt.
-- Användningsområde: ${usage}
-- Kundens beskrivning av kvalitetsbehov: "${quality}"
-- Kundens beskrivning av maskering: "${masking}"
-- Kundens beskrivning av förbehandling: "${pretreatment}"
-Exempel på bra förslag: Om kunden skriver "hög finish", fråga om specifik glansgrad. Om de nämner "utomhus", föreslå att de specificerar en korrosivitetsklass som C3 eller C4. Formulera svaren som direkta, hjälpsamma tips till kunden.`;
+  //   const prompt = `En kund fyller i en offertförfrågan för industrilackering. Baserat på informationen nedan, agera som en expert på ytbehandling och ge en kort, punktlista med förslag på förtydliganden eller frågor som hjälper kunden att få en mer exakt offert. Svara på svenska. Håll det vänligt och professionellt.
+  // - Användningsområde: ${usage}
+  // - Kundens beskrivning av kvalitetsbehov: "${quality}"
+  // - Kundens beskrivning av maskering: "${masking}"
+  // - Kundens beskrivning av förbehandling: "${pretreatment}"
+  // Exempel på bra förslag: Om kunden skriver "hög finish", fråga om specifik glansgrad. Om de nämner "utomhus", föreslå att de specificerar en korrosivitetsklass som C3 eller C4. Formulera svaren som direkta, hjälpsamma tips till kunden.`;
 
-    const apiKey = "";
-    const apiUrl = `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash-preview-05-20:generateContent?key=${apiKey}`;
+  //   const apiKey = "";
+  //   const apiUrl = `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash-preview-05-20:generateContent?key=${apiKey}`;
 
-    fetch(apiUrl, {
-      method: "POST",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({ contents: [{ parts: [{ text: prompt }] }] }),
-    })
-      .then(async (r) => {
-        if (!r.ok) throw new Error(String(r.status));
-        const j = await r.json();
-        const text = j?.candidates?.[0]?.content?.parts?.[0]?.text as string | undefined;
-        if (!text) throw new Error("Invalid response");
-        const html =
-          "<ul>" +
-          text
-            .split(/[\n\r]+/)
-            .filter((line: string) => line.trim().startsWith("*") || line.trim().startsWith("-"))
-            .map((line: string) => `<li class="list-disc list-inside mb-1">${line.replace(/[\*\-]\s*/, "")}</li>`)
-            .join("") +
-          "</ul>";
-        setGeminiHtml(html);
-      })
-      .catch(() => {
-        setGeminiHtml(
-          `<p class="text-red-600 font-medium">Något gick fel vid analysen. Vänligen kontrollera din information och försök igen, eller skicka förfrågan direkt.</p>`
-        );
-      })
-      .finally(() => setGeminiLoading(false));
-  }
+  //   fetch(apiUrl, {
+  //     method: "POST",
+  //     headers: { "Content-Type": "application/json" },
+  //     body: JSON.stringify({ contents: [{ parts: [{ text: prompt }] }] }),
+  //   })
+  //     .then(async (r) => {
+  //       if (!r.ok) throw new Error(String(r.status));
+  //       const j = await r.json();
+  //       const text = j?.candidates?.[0]?.content?.parts?.[0]?.text as string | undefined;
+  //       if (!text) throw new Error("Invalid response");
+  //       const html =
+  //         "<ul>" +
+  //         text
+  //           .split(/[\n\r]+/)
+  //           .filter((line: string) => line.trim().startsWith("*") || line.trim().startsWith("-"))
+  //           .map((line: string) => `<li class="list-disc list-inside mb-1">${line.replace(/[\*\-]\s*/, "")}</li>`)
+  //           .join("") +
+  //         "</ul>";
+  //       setGeminiHtml(html);
+  //     })
+  //     .catch(() => {
+  //       setGeminiHtml(
+  //         `<p class="text-red-600 font-medium">Något gick fel vid analysen. Vänligen kontrollera din information och försök igen, eller skicka förfrågan direkt.</p>`
+  //       );
+  //     })
+  //     .finally(() => setGeminiLoading(false));
+  // }
 
   async function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
     e.preventDefault();
     const formEl = e.currentTarget as HTMLFormElement;
     const submitBtn = formEl.querySelector('button[type="submit"]') as HTMLButtonElement | null;
     try {
-      submitBtn && (submitBtn.disabled = true);
+      if (submitBtn) submitBtn.disabled = true;
       const data = new FormData(formEl);
       // attach any saved annotations as additional files
       const filenames = Object.keys(annotations);
@@ -336,13 +336,13 @@ Exempel på bra förslag: Om kunden skriver "hög finish", fråga om specifik gl
       setUploadedFiles([]);
       selectedFilesRef.current.clear();
       setShowEndCustomer(false);
-    } catch (err) {
+    } catch {
       setGeminiLoading(false);
       setGeminiHtml(
         '<p class="text-red-600 font-medium">Kunde inte skicka din förfrågan. Försök igen.</p>'
       );
     } finally {
-      submitBtn && (submitBtn.disabled = false);
+      if (submitBtn) submitBtn.disabled = false;
     }
   }
 

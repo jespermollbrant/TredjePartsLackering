@@ -64,13 +64,13 @@ export async function POST(req: NextRequest) {
       const files = form.getAll("drawing-upload");
       const annotationFiles = form.getAll("drawing-annotations");
       const uploadedFiles: { name: string; storagePath: string; publicUrl?: string; annotationUrl?: string }[] = [];
-      if ((bucket as any)?.file && files.length > 0) {
+      if (bucket?.file && files.length > 0) {
         for (const file of files) {
           if (!(file instanceof File)) continue;
           const arrayBuffer = await file.arrayBuffer();
           const buffer = Buffer.from(arrayBuffer);
           const storagePath = `quotes/${docRef.id}/${file.name}`;
-          const gcsFile = (bucket as any).file(storagePath);
+          const gcsFile = bucket.file(storagePath);
           await gcsFile.save(buffer, {
             contentType: file.type || "application/octet-stream",
             resumable: false,
@@ -85,7 +85,7 @@ export async function POST(req: NextRequest) {
             const makePublic = String(process.env.MAKE_UPLOADS_PUBLIC || "").toLowerCase() === "true";
             if (makePublic) {
               await gcsFile.makePublic();
-              const bucketName = (bucket as any).name as string;
+              const bucketName = bucket.name as string;
               publicUrl = `https://storage.googleapis.com/${bucketName}/${encodeURIComponent(storagePath)}`;
             } else {
               const [signedUrl] = await gcsFile.getSignedUrl({
@@ -103,7 +103,7 @@ export async function POST(req: NextRequest) {
             const ab = await matchingAnnotation.arrayBuffer();
             const b = Buffer.from(ab);
             const annPath = `quotes/${docRef.id}/${matchingAnnotation.name}`;
-            const annFile = (bucket as any).file(annPath);
+            const annFile = bucket.file(annPath);
             await annFile.save(b, {
               contentType: matchingAnnotation.type || "image/png",
               resumable: false,
@@ -116,7 +116,7 @@ export async function POST(req: NextRequest) {
               const makePublic = String(process.env.MAKE_UPLOADS_PUBLIC || "").toLowerCase() === "true";
               if (makePublic) {
                 await annFile.makePublic();
-                const bucketName = (bucket as any).name as string;
+                const bucketName = bucket.name as string;
                 annotationUrl = `https://storage.googleapis.com/${bucketName}/${encodeURIComponent(annPath)}`;
               } else {
                 const [signedUrl] = await annFile.getSignedUrl({
@@ -128,7 +128,7 @@ export async function POST(req: NextRequest) {
             } catch {}
           }
 
-          const entry: any = { name: file.name, storagePath };
+          const entry: { name: string; storagePath: string; publicUrl?: string; annotationUrl?: string } = { name: file.name, storagePath };
           if (publicUrl != null) entry.publicUrl = publicUrl;
           if (annotationUrl != null) entry.annotationUrl = annotationUrl;
           uploadedFiles.push(entry);
