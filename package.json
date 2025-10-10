@@ -1,0 +1,34 @@
+{
+  "name": "my-app",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev --turbopack",
+    "build": "next build --turbopack",
+    "start": "next start",
+    "lint": "eslint",
+    "functions:build": "cd functions && npm run build",
+    "functions:serve": "cd functions && npm run serve",
+    "functions:deploy": "cd functions && npm run deploy",
+    "firebase:login": "npx firebase login",
+    "firebase:deploy": "npx firebase deploy"
+  },
+  "dependencies": {
+    "firebase-admin": "^13.5.0",
+    "next": "15.5.3",
+    "react": "19.1.0",
+    "react-dom": "19.1.0"
+  },
+  "devDependencies": {
+    "@eslint/eslintrc": "^3",
+    "@tailwindcss/postcss": "^4",
+    "@types/node": "^20",
+    "@types/react": "^19",
+    "@types/react-dom": "^19",
+    "eslint": "^9",
+    "eslint-config-next": "15.5.3",
+    "firebase-tools": "^14.19.1",
+    "tailwindcss": "^4",
+    "typescript": "^5"
+  }
+}
