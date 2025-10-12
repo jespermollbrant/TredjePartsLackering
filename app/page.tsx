@@ -579,7 +579,7 @@ export default function Page() {
         <section id="services" className="py-20 bg-white relative">
           <div className="absolute inset-0 bg-gradient-to-br from-slate-50/50 to-white"></div>
           <div className="container mx-auto px-6 text-center relative z-10">
-            <h2 className="section-title text-brand-blue">Industrilackeirng som täcker alla behov</h2>
+            <h2 className="section-title text-brand-blue">Industrilackering som täcker alla behov</h2>
             <p className="section-subtitle">
               Vi erbjuder expertis inom diverse metoder av industrilackering, men de tvo främsta är pulverlackering och våtlackering. Vill du lära dig mer om metoderna kan du utforska detaljerna nedan för att se vilken metod som bäst passar ditt projekt, men såklart kan vi också välja lämplig metod baserat på dina behov.
             </p>
@@ -811,27 +811,33 @@ export default function Page() {
         <section id="why-us" className="py-20 bg-white relative">
           <div className="absolute inset-0 heritage-pattern"></div>
           <div className="container mx-auto px-6 text-center relative z-10">
-            <h2 className="section-title text-brand-yellow">Din partner, inte bara en leverantör</h2>
+            <h2 className="section-title text-brand-yellow">Varför välja 3P Lackering?</h2>
             <p className="section-subtitle">
-              Kunder väljer oss för att vi erbjuder mer än bara lackering. Vi erbjuder en helhetslösning som sparar tid, minskar risker och garanterar ett resultat av högsta klass.
+              Kunder väljer oss för att vi erbjuder mer än bara lackering. Vi är er strategiska partner som levererar en helhetslösning som sparar tid, minskar risker och garanterar ett resultat av högsta klass.
             </p>
-            <div className="grid md:grid-cols-3 gap-8 max-w-6xl mx-auto text-left">
+            <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8 max-w-7xl mx-auto text-left">
               <div className="card-brand p-6 hover:border-brand-orange">
-                <h3 className="text-xl font-semibold text-brand-orange mb-2">Enkelhet</h3>
+                <h3 className="text-xl font-semibold text-brand-orange mb-2">Riskhantering & Resiliens</h3>
                 <p className="text-slate-600">
-                  En enda kontaktpunkt för alla dina lackeringsbehov. Vi hanterar allt från A till Ö så att du kan fokusera på din verksamhet.
+                  Bygg en motståndskraftig försörjningskedja. Att förlita sig på en enda leverantör är en risk. Vad händer vid kapacitetsbrist eller produktionsstopp? Vi agerar som ert förkvalificerade skyddsnät och säkrar er produktion genom att snabbt kunna matcha ert behov med rätt kapacitet i vårt nätverk. Det minimerar störningar och skapar trygghet.
                 </p>
               </div>
               <div className="card-brand p-6 hover:border-brand-blue" style={{borderLeftColor: 'var(--color-blue)'}}>
-                <h3 className="text-xl font-semibold text-brand-blue mb-2">Trygghet</h3>
+                <h3 className="text-xl font-semibold text-brand-blue mb-2">Flexibilitet för Specialiserade Behov</h3>
                 <p className="text-slate-600">
-                  Vi är din oberoende expert som kvalitetssäkrar hela processen. Du får tryggheten i att en specialist övervakar ditt projekt.
+                  Era behov är sällan statiska. Nya produkter, unika material eller varierande volymer kräver anpassningsförmåga. Vi matchar varje unikt uppdrag – från enstaka prototyper till stora serier – med den specialist som har exakt rätt utrustning och expertis för jobbet.
                 </p>
               </div>
               <div className="card-brand p-6 hover:border-brand-green" style={{borderLeftColor: 'var(--color-green)'}}>
-                <h3 className="text-xl font-semibold text-brand-green mb-2">Flexibilitet</h3>
+                <h3 className="text-xl font-semibold text-brand-green mb-2">Effektivitet & Minskad Administration</h3>
                 <p className="text-slate-600">
-                  Genom vårt breda nätverk kan vi erbjuda en komplett portfölj av tjänster, från enstaka prototyper till stora produktionsserier.
+                  Enkelhet som sparar tid och resurser. Glöm tidskrävande administration och hantering av flera leverantörer. Vi är er enda, kunniga kontaktpunkt som sköter allt från offert och teknisk specifikation till logistik och uppföljning. Ni får en snabb och smidig process så att ni kan fokusera på er kärnverksamhet.
+                </p>
+              </div>
+              <div className="card-brand p-6 hover:border-brand-yellow" style={{borderLeftColor: 'var(--color-yellow)'}}>
+                <h3 className="text-xl font-semibold text-brand-yellow mb-2">Kvalitetssäkring & Kontroll</h3>
+                <p className="text-slate-600">
+                  Garanterad kvalitet i varje steg. Med vår bakgrund inom industrilackering agerar vi som er oberoende expert. Vi kvalitetssäkrar hela processen, från förbehandling till slutinspektion, för att säkerställa att resultatet uppfyller era specifikationer och krav. Det är er trygghet för ett perfekt resultat, varje gång.
                 </p>
               </div>
             </div>
