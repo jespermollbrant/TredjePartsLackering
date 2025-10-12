@@ -551,7 +551,7 @@ export default function Page() {
                       Projektledning & Aktiv Kvalitetskontroll
                       </h3>
                       <p className="text-slate-600">
-                      När ni godkänt offerten tar vi fullt projektledaransvar. Vi koordinerar all logistik och agerar som er "kontrollant på plats". Genom löpande uppföljning och en noggrann slutinspektion säkerställer vi att lackeringen uppfyller era exakta kvalitetskrav.    </p>
+                      När ni godkänt offerten tar vi fullt projektledaransvar. Vi koordinerar all logistik och agerar som er &quot;kontrollant på plats&quot;. Genom löpande uppföljning och en noggrann slutinspektion säkerställer vi att lackeringen uppfyller era exakta kvalitetskrav.    </p>
                     </>
                   )}
                   {n === 4 && (
