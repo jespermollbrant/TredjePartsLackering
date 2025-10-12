@@ -473,7 +473,7 @@ export default function Page() {
           <a href="#" className="flex items-center space-x-3">
             <span className="text-2xl font-bold text-slate-800 text-brand-orange">
               3. P. Lackering
-              <span className="text-slate-800 text-sm"> - Förmedlare av Tredje Parts Lackering</span>
+              <span className="text-slate-800 text-sm"> - Förmedlare & Oberoende Expert av Lackering</span>
             </span>
           </a>
           <div className="hidden md:flex items-center space-x-6">
@@ -494,7 +494,7 @@ export default function Page() {
             href="#quote"
             className="btn-brand"
           >
-            Skapa din Offert
+            Offertförfrågan
           </a>
         </nav>
       </header>
@@ -504,11 +504,10 @@ export default function Page() {
           <div className="absolute inset-0 bg-black/20"></div>
           <div className="container mx-auto px-6 text-center relative z-10">
             <h1 className="text-4xl md:text-6xl font-bold leading-tight mb-4 text-white">
-              Enkel & pålitlig industrilackering.
+            Vi förmedlar rätt industrilackering, utan risk eller krångel
             </h1>
             <p className="text-lg md:text-xl text-white/90 max-w-3xl mx-auto mb-8">
-              Vi är din Tredje Part Lackerings-förmedlare. Beskriv ditt behov, vi väljer ut en lämplig industrilackerare, du får en offert och sedan låter du oss hantera resten – från logistik till kvalitetskontroll.
-            </p>
+            Vi är en oberoende expertpartner och förmedlare av industrilackering. Istället för att lägga tid på att hitta och kvalitetssäkra leverantörer, har vi tillgång till ett nätverk av beprövade specialister. Beskriv ert behov, så hanterar vi hela processen – från analys och offert till logistik och garanterad kvalitet.  </p>
             <a
               href="#quote"
               className="bg-white text-brand-orange font-bold py-4 px-8 rounded-lg text-lg hover:bg-slate-50 transition-all duration-300 shadow-lg hover:shadow-xl transform hover:-translate-y-1"
@@ -521,10 +520,9 @@ export default function Page() {
         <section id="process" className="py-20 bg-white relative">
           <div className="absolute inset-0 heritage-pattern"></div>
           <div className="container mx-auto px-6 text-center relative z-10">
-            <h2 className="section-title animate-fade-in-up">En transparent process från start till leverans</h2>
+            <h2 className="section-title animate-fade-in-up">Från behov till leverans – en garanterat smidig process</h2>
             <p className="section-subtitle animate-fade-in-up">
-              Vi har förenklat hela lackeringsprocessen i fyra tydliga steg. Ditt fokus är din kärnverksamhet, vårt är att smidigtleverera en ytbehandling som möte dina behov.
-            </p>
+            Vi har designat en transparent process där vi tar hand om detaljerna, så att ni kan fokusera på er kärnverksamhet. Varje steg är byggt för att maximera pålitlighet och minimera er administration. </p>
             <div className="grid md:grid-cols-4 gap-8 max-w-6xl mx-auto">
               {[1, 2, 3, 4].map((n) => (
                 <div key={n} className="card-brand p-6">
@@ -532,41 +530,37 @@ export default function Page() {
                   {n === 1 && (
                     <>
                       <h3 className="text-xl font-semibold text-slate-800 mb-2">
-                        Förfrågan & Analys
+                      Förfrågan & Teknisk Rådgivning
                       </h3>
                       <p className="text-slate-600">
-                        Du skickar in din förfrågan via vårt formulär. Vi analyserar dina behov, eventuella ritningar och krav för att välja den bästa metoden och industrilackerare för just ditt projekt. Genom våra kontakter begär vi ett flertal offerter och väljer de bästa. 
-                      </p>
+                      Allt börjar med er förfrågan. Istället för att bara ta emot den, agerar vi som er tekniska partner. Vi granskar underlaget, ställer rätt följdfrågor och säkerställer att alla specifikationer är kompletta. Detta minimerar risken för missförstånd och garanterar att jobbet blir rätt från start.   </p>
                     </>
                   )}
                   {n === 2 && (
                     <>
                       <h3 className="text-xl font-semibold text-slate-800 mb-2">
-                        Offert & Beställning
+                      Optimal Matchning & Tydlig Offert
                       </h3>
                       <p className="text-slate-600">
-                        Du får en konkurrenskraftig och tydlig offert från oss. Efter godkännande hanterar vi all administration och skickar en formell beställning till vår utvalda lackeringspartner.
-                      </p>
+                      Med ett komplett underlag matchar vi ert projekt mot den bäst lämpade specialistlackeraren i vårt kvalitetssäkrade nätverk – baserat på teknik, material och kapacitet. Ni får en enda, tydlig och konkurrenskraftig offert från oss, utan att behöva jämföra och förhandla med flera olika aktörer.  </p>
                     </>
                   )}
                   {n === 3 && (
                     <>
                       <h3 className="text-xl font-semibold text-slate-800 mb-2">
-                        Projektledning & Kvalitetskontroll
+                      Projektledning & Aktiv Kvalitetskontroll
                       </h3>
                       <p className="text-slate-600">
-                        Vi sköter all logistik och projektleder arbetet. Vi genomför löpande kontroller och en noggrann slutinspektion för att garantera att resultatet möter alla specifikationer.
-                      </p>
+                      När ni godkänt offerten tar vi fullt projektledaransvar. Vi koordinerar all logistik och agerar som er "kontrollant på plats". Genom löpande uppföljning och en noggrann slutinspektion säkerställer vi att lackeringen uppfyller era exakta kvalitetskrav.    </p>
                     </>
                   )}
                   {n === 4 && (
                     <>
                       <h3 className="text-xl font-semibold text-slate-800 mb-2">
-                        Leverans & Uppföljning
+                      Punktlig Leverans & Enkel Administration
                       </h3>
                       <p className="text-slate-600">
-                        De färdigbehandlade objekten levereras tillbaka till dig enligt överenskommen tidplan. Vi sköter all fakturering och följer upp för att säkerställa att du är helt nöjd.
-                      </p>
+                      Vi ser till att era färdigbehandlade produkter levereras tillbaka enligt överenskommen tidplan. Ni får en enda faktura från oss och en enda part att förhålla er till. Enkelt, tryggt och effektivt.   </p>
                     </>
                   )}
                 </div>
@@ -579,11 +573,9 @@ export default function Page() {
         <section id="services" className="py-20 bg-white relative">
           <div className="absolute inset-0 bg-gradient-to-br from-slate-50/50 to-white"></div>
           <div className="container mx-auto px-6 text-center relative z-10">
-            <h2 className="section-title text-brand-blue">Industrilackering som täcker alla behov</h2>
+            <h2 className="section-title text-brand-blue">Rätt ytbehandling för varje unikt behov</h2>
             <p className="section-subtitle">
-              Vi erbjuder expertis inom diverse metoder av industrilackering, men de tvo främsta är pulverlackering och våtlackering. Vill du lära dig mer om metoderna kan du utforska detaljerna nedan för att se vilken metod som bäst passar ditt projekt, men såklart kan vi också välja lämplig metod baserat på dina behov.
-            </p>
-
+            Att välja rätt metod är avgörande för slutresultatet. Vi analyserar era krav på funktion, estetik och kostnadseffektivitet för att säkerställa att ert projekt får den optimala ytbehandlingen. Genom vårt nätverk erbjuder vi en komplett portfölj av industrins främsta metoder. Nedanför är ett axplock av vanliga ytbehandlingsmetoder.     </p>
             <div className="max-w-4xl mx-auto text-left">
               <div className="flex justify-center border-b border-slate-200 mb-8">
                 <button
@@ -1301,7 +1293,7 @@ export default function Page() {
       <footer className="bg-gradient-to-r from-slate-900 via-slate-800 to-slate-900 text-slate-400 py-12 border-t border-brand-orange/20">
         <div className="container mx-auto px-6 text-center">
           <div className="flex items-center justify-center space-x-3 mb-4">
-            <p className="font-bold text-white text-lg">3. P. Lackering - Förmedlare av Tredje Parts Lackering</p>
+            <p className="font-bold text-white text-lg">3. P. Lackering - Oberoende Förmedlare & Expert av Industrilackering</p>
           </div>
           <p> Telefon: 0708214708</p>
           <div className="mt-4 space-x-6">
@@ -1319,7 +1311,7 @@ export default function Page() {
             </a>
           </div>
           <p className="mt-6 text-sm text-slate-500">
-            &copy; 2025 - 3. P. Lackering - Förmedlare av Tredje Parts Lackering
+            &copy; 2025 - 3. P. Lackering - Oberoende Förmedlare & Expert av Industrilackering
           </p>
         </div>
       </footer>

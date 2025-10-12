@@ -15,8 +15,8 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "3 P Lackering - Förmedlare av Tredje Parts Lackering",
-  description: "Din kontaktpunkt för högkvalitativ våt- och pulverlackering. Beskriv dina behov, få en offert och låt oss hantera resten – från logistik till kvalitetskontroll.",
+  title: "3. P. Lackering - Förmedlare & Oberoende Expert av Industrilackering",
+  description: "Förmedlare & Oberoende Expert av Industrilackering",
 };
 
 export default function RootLayout({
