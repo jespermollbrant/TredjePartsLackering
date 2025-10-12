@@ -325,17 +325,10 @@ export default function Page() {
       const res = await fetch('/api/quote', { method: 'POST', body: data });
       if (!res.ok) throw new Error(String(res.status));
       const json = await res.json();
-      setGeminiLoading(false);
-      setGeminiHtml(
-        '<p class="text-green-600 font-medium">Tack! Din förfrågan är sparad. ID: ' +
-          String(json.id || '') +
-          '</p>'
-      );
-      formEl.reset();
-      if (fileListRef.current) fileListRef.current.textContent = "";
-      setUploadedFiles([]);
-      selectedFilesRef.current.clear();
-      setShowEndCustomer(false);
+      
+      // Redirect to thank you page with quote ID
+      const quoteId = json.id || '';
+      window.location.href = `/tack${quoteId ? `?id=${quoteId}` : ''}`;
     } catch {
       setGeminiLoading(false);
       setGeminiHtml(
