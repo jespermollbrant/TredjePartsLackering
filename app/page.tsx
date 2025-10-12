@@ -3,7 +3,7 @@
 import { useEffect, useRef, useState } from "react";
 
 export default function Page() {
-  const [activeTab, setActiveTab] = useState<"powder" | "wet">("powder");
+  const [activeTab, setActiveTab] = useState<"powder" | "wet" | "blasting" | "corrosion">("powder");
   // const [partnerSearch] = useState("");
   const [showEndCustomer, setShowEndCustomer] = useState(false);
   const [geminiLoading, setGeminiLoading] = useState(false);
@@ -587,6 +587,22 @@ export default function Page() {
             <div className="max-w-4xl mx-auto text-left">
               <div className="flex justify-center border-b border-slate-200 mb-8">
                 <button
+                  onClick={() => setActiveTab("blasting")}
+                  className={`tab-button text-lg py-3 px-6 border-b-2 border-transparent transition-colors duration-200 ${
+                    activeTab === "blasting" ? "border-brand-green text-brand-green font-semibold" : "text-slate-500 hover:text-brand-green"
+                  }`}
+                >
+                  Blästring
+                </button>
+                <button
+                  onClick={() => setActiveTab("corrosion")}
+                  className={`tab-button text-lg py-3 px-6 border-b-2 border-transparent transition-colors duration-200 ${
+                    activeTab === "corrosion" ? "border-brand-yellow text-brand-yellow font-semibold" : "text-slate-500 hover:text-brand-yellow"
+                  }`}
+                >
+                  Korrosionsskydd
+                </button>
+                <button
                   onClick={() => setActiveTab("powder")}
                   className={`tab-button text-lg py-3 px-6 border-b-2 border-transparent transition-colors duration-200 ${
                     activeTab === "powder" ? "border-brand-orange text-brand-orange font-semibold" : "text-slate-500 hover:text-brand-orange"
@@ -602,8 +618,115 @@ export default function Page() {
                 >
                   Våtlackering
                 </button>
+                
               </div>
 
+              {activeTab === "blasting" && (
+                <div data-content="blasting" className="space-y-6">
+                  <h3 className="text-2xl font-bold text-brand-green">
+                    Blästring: Grundläggande ytförberedelse
+                  </h3>
+                  <p className="text-slate-600">
+                    Blästring är en kritisk förbehandlingsmetod som säkerställer optimal vidhäftning för lackering. Genom att använda abrasiva medel under högt tryck avlägsnas orenheter, rost och gamla beläggningar, vilket skapar en ren och mottaglig yta för vidare behandling.
+                  </p>
+                  <div>
+                    <h4 className="text-xl font-semibold text-brand-green mb-2">
+                      Blästring i blästerskåp
+                    </h4>
+                    <p className="text-slate-600 mb-4">
+                      Blästrande bearbetning innesluten i ett skåp där abrasivt medel understödd av tryckluft skjutas ut mot arbetsstycket för att rengöra dess yta.
+                    </p>
+                    <h5 className="text-lg font-semibold text-brand-orange mb-2">
+                      Hur fungerar metoden
+                    </h5>
+                    <ol className="list-decimal list-inside space-y-2 text-slate-600">
+                      <li>
+                        <strong>Innesluten process:</strong> Bearbetningen sker innesluten i ett skåp. Genom fast monterade gummihandskar eller styrning vrids antingen arbetsstycket eller sprutmunstycket för att komma åt de ytor som skall blästras.
+                      </li>
+                      <li>
+                        <strong>Abrasiv accelerering:</strong> Ett abrasivt medel tillförs parallellt med tryckluft och accelereras upp i hastighet då det passerar blästermunstycket. Partiklarna slungas på så sätt mot arbetsstyckets yta och avlägsnar orenheter.
+                      </li>
+                      <li>
+                        <strong>Återvinning:</strong> Finare damm som skapas sugs upp medan blästermedlet och tyngre avverkade partiklar faller ner genom gallret och samlas i en behållare i botten. Från behållaren sugs åter igen blästermedlet upp och sprutas genom munstycket.
+                      </li>
+                      <li>
+                        <strong>Underhåll:</strong> Då blästermedlet slits samt att det blandas upp med tyngre avverkade partiklar från detaljen så måste det rengöras eller bytas regelbundet.
+                      </li>
+                    </ol>
+                  </div>
+                  <div>
+                    <h4 className="text-xl font-semibold text-brand-green mb-2">
+                      Fördelar och tillämpningar
+                    </h4>
+                    <p className="text-slate-600">
+                      Blästring är särskilt effektivt för att förbereda metaller inför lackering, då det skapar en optimal ytstruktur för vidhäftning. Metoden används ofta som försteg inför pulverlackering och våtlackering, och är avgörande för att säkerställa långvarigt korrosionsskydd och hög kvalitet på den slutliga lackeringen.
+                    </p>
+                  </div>
+                </div>
+              )}
+
+              {activeTab === "corrosion" && (
+                <div data-content="corrosion" className="space-y-6">
+                  <h3 className="text-2xl font-bold text-brand-yellow">
+                    Korrosionsskydd: Långsiktigt skydd för alla miljöer
+                  </h3>
+                  <p className="text-slate-600">
+                    Korrosionsskydd är avgörande för att säkerställa att metallkonstruktioner och komponenter bibehåller sin funktion och säkerhet över tid. Valet av material och beläggning påverkas av flera faktorer, där luftfuktighet och salt i luften har stor inverkan.
+                  </p>
+                  <div>
+                    <h4 className="text-xl font-semibold text-brand-green mb-2">
+                      Korrosivitetsklasser enligt SS-EN ISO 9223 och SS-EN ISO 12944-2
+                    </h4>
+                    <div className="space-y-4">
+                      <div className="border-l-4 border-brand-orange pl-4">
+                        <h5 className="text-lg font-semibold text-brand-orange mb-1">C1 - Mycket låg korrosion</h5>
+                        <p className="text-slate-600 text-sm">
+                          Miljö med mycket låg korrosion, exempelvis inomhus i uppvärmda utrymmen med torr luft och obetydliga mängder föroreningar. <strong>Rekommenderade ytbehandlingar:</strong> Elförzinkning, sendzimir, varmförzinkning, zink/nickel.
+                        </p>
+                      </div>
+                      <div className="border-l-4 border-brand-blue pl-4">
+                        <h5 className="text-lg font-semibold text-brand-blue mb-1">C2 - Låg korrosivitet</h5>
+                        <p className="text-slate-600 text-sm">
+                          Miljö med låg korrosivitet som icke uppvärmda utrymmen inomhus med varierande temperatur och luftfuktighet. Även utomhus i låga koncentrationer av luftföroreningar, landsbygdsområden. <strong>Rekommenderade ytbehandlingar:</strong> Sendzimir, varmförzinkning, zink/nickel.
+                        </p>
+                      </div>
+                      <div className="border-l-4 border-brand-green pl-4">
+                        <h5 className="text-lg font-semibold text-brand-green mb-1">C3 - Måttlig korrosivitet</h5>
+                        <p className="text-slate-600 text-sm">
+                          Miljöer med måttlig korrosivitet. Inomhusmiljöer med måttlig luftfuktighet och vissa luftföroreningar. Utomhus i måttliga mängder luftföroreningar samt stadsområden och områden med lätt industri. <strong>Rekommenderade ytbehandlingar:</strong> Varmförzinkad, zink/nickel.
+                        </p>
+                      </div>
+                      <div className="border-l-4 border-brand-yellow pl-4">
+                        <h5 className="text-lg font-semibold text-brand-yellow mb-1">C4 - Hög korrosivitet</h5>
+                        <p className="text-slate-600 text-sm">
+                          Miljö med hög korrosivitet – betydande mängder luftföroreningar i utomhusmiljöer eller måttliga mängder salt, industri och kustområden. Inomhusmiljö med hög luftfuktighet och stora mängder luftföroreningar. <strong>Rekommenderade ytbehandlingar:</strong> Varmförzinkad, zink/nickel, rostfri 304L.
+                        </p>
+                      </div>
+                      <div className="border-l-4 border-brand-red pl-4">
+                        <h5 className="text-lg font-semibold text-brand-red mb-1">C5-I - Industriell miljö med mycket hög korrosivitet</h5>
+                        <p className="text-slate-600 text-sm">
+                          Industriområden utomhus med tufft klimat och hög luftfuktighet. Kust- och havsområden med stora mängder salt. Permanent fuktkondensation i inomhusmiljö och stora mängder luftföroreningar. <strong>Rekommenderade ytbehandlingar:</strong> Rostfri 304LK och syrafast 316L.
+                        </p>
+                      </div>
+                      <div className="border-l-4 border-red-600 pl-4">
+                        <h5 className="text-lg font-semibold text-red-600 mb-1">C5-M - Marin miljö med mycket hög korrosivitet</h5>
+                        <p className="text-slate-600 text-sm">
+                          Utomhus miljöer som industri-, kust- och havsområden i subtropiska och tropiska klimat med salt och föroreningar, varvzoner. Inomhusmiljöer med extrem luftfuktighet, kondens och extremt tufft klimat. <strong>Rekommenderad ytbehandling:</strong> syrafast 316L.
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+                  <div>
+                    <h4 className="text-xl font-semibold text-brand-green mb-2">
+                      Vår expertis
+                    </h4>
+                    <p className="text-slate-600">
+                      Vi hjälper dig att välja rätt korrosionsskydd baserat på din specifika miljö och tillämpning. Genom att följa internationella standarder och använda beprövade metoder säkerställer vi att dina komponenter får optimalt skydd för sin förväntade livslängd.
+                    </p>
+                  </div>
+                </div>
+              )}
+              
               {activeTab === "powder" && (
                 <div data-content="powder" className="space-y-6">
                   <h3 className="text-2xl font-bold text-brand-orange">
@@ -679,6 +802,7 @@ export default function Page() {
                   </div>
                 </div>
               )}
+
             </div>
           </div>
         </section>
@@ -1171,18 +1295,15 @@ export default function Page() {
       <footer className="bg-gradient-to-r from-slate-900 via-slate-800 to-slate-900 text-slate-400 py-12 border-t border-brand-orange/20">
         <div className="container mx-auto px-6 text-center">
           <div className="flex items-center justify-center space-x-3 mb-4">
-            <p className="font-bold text-white text-lg">3 P Lackering - Förmedlare av Tredje Parts Lackering</p>
+            <p className="font-bold text-white text-lg">3. P. Lackering - Förmedlare av Tredje Parts Lackering</p>
           </div>
-          <p> 0708214708</p>
+          <p> Telefon: 0708214708</p>
           <div className="mt-4 space-x-6">
             <a href="#process" className="hover:text-brand-orange transition-colors duration-200">
               Process
             </a>
             <a href="#services" className="hover:text-brand-blue transition-colors duration-200">
               Tjänster
-            </a>
-            <a href="#network" className="hover:text-brand-green transition-colors duration-200">
-              Nätverk
             </a>
             <a href="#industries" className="hover:text-brand-red transition-colors duration-200">
               Branscher
@@ -1192,7 +1313,7 @@ export default function Page() {
             </a>
           </div>
           <p className="mt-6 text-sm text-slate-500">
-            &copy; 2025 - 3 P Lackering - Förmedlare av Tredje Parts Lackering
+            &copy; 2025 - 3. P. Lackering - Förmedlare av Tredje Parts Lackering
           </p>
         </div>
       </footer>
