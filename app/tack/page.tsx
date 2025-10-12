@@ -3,6 +3,13 @@
 import { useEffect, useState } from "react";
 import Link from "next/link";
 
+// Extend Window interface to include gtag
+declare global {
+  interface Window {
+    gtag?: (command: string, targetId: string, config?: Record<string, unknown>) => void;
+  }
+}
+
 export default function ThankYouPage() {
   const [quoteId, setQuoteId] = useState<string | null>(null);
 
@@ -15,8 +22,8 @@ export default function ThankYouPage() {
     }
 
     // Google Ads conversion tracking
-    if (typeof window !== 'undefined' && (window as any).gtag) {
-      (window as any).gtag('event', 'conversion', {
+    if (typeof window !== 'undefined' && window.gtag) {
+      window.gtag('event', 'conversion', {
         'send_to': 'AW-CONVERSION_ID/CONVERSION_LABEL', // Replace with your actual conversion ID and label
         'value': 1.0,
         'currency': 'SEK'
