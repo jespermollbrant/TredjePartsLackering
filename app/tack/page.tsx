@@ -24,9 +24,7 @@ export default function ThankYouPage() {
     // Google Ads conversion tracking
     if (typeof window !== 'undefined' && window.gtag) {
       window.gtag('event', 'conversion', {
-        'send_to': 'AW-CONVERSION_ID/CONVERSION_LABEL', // Replace with your actual conversion ID and label
-        'value': 1.0,
-        'currency': 'SEK'
+        'send_to': 'AW-17646346376/YH79CKKuuqwbEIjBt95B',
       });
     }
   }, []);
