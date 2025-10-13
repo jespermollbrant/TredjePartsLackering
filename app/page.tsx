@@ -1288,6 +1288,7 @@ export default function Page() {
           <div className="flex items-center justify-center space-x-3 mb-4">
             <p className="font-bold text-white text-lg">3. P. Lackering - Oberoende Förmedlare & Expert av Industrilackering</p>
           </div>
+          <p> Mail: jesper@3plackering.com</p>
           <p> Telefon: 0708214708</p>
           <div className="mt-4 space-x-6">
             <a href="#process" className="hover:text-brand-orange transition-colors duration-200">
