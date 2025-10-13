@@ -473,8 +473,8 @@ export default function Page() {
             <a href="#process" className="text-slate-600 hover:text-brand-orange transition-colors duration-200">
               Så fungerar det
             </a>
-            <a href="#services" className="text-slate-600 hover:text-brand-blue transition-colors duration-200">
-              Våra Tjänster
+            <a href="/ytbehandlingar" className="text-slate-600 hover:text-brand-blue transition-colors duration-200">
+              Våra Ytbehandlingar
             </a>
             <a href="#industries" className="text-slate-600 hover:text-brand-red transition-colors duration-200">
               Branscher
@@ -1297,8 +1297,8 @@ export default function Page() {
             <a href="#process" className="hover:text-brand-orange transition-colors duration-200">
               Process
             </a>
-            <a href="#services" className="hover:text-brand-blue transition-colors duration-200">
-              Tjänster
+            <a href="/ytbehandlingar" className="hover:text-brand-blue transition-colors duration-200">
+              Ytbehandlingar
             </a>
             <a href="#industries" className="hover:text-brand-red transition-colors duration-200">
               Branscher
