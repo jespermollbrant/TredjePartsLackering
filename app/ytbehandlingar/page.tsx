@@ -47,23 +47,8 @@ export default function YtbehandlingarPage() {
               Våra Ytbehandlingar
             </h1>
             <p className="text-lg md:text-xl text-white/90 max-w-3xl mx-auto mb-8">
-              Rätt ytbehandling för varje unikt behov. Att välja rätt metod är avgörande för slutresultatet. 
-              Istället för att ni ska behöva vara experter på allt från korrosionsklasser till härdningstider, 
-              agerar vi som er tekniska partner.
+            Vi analyserar era krav på funktion, estetik och kostnadseffektivitet för att säkerställa att ert projekt får den optimala ytbehandlingen. Genom vårt nätverk erbjuder vi en komplett portfölj av industrins främsta metoder. Utforska våra kärnområden nedan för att lära dig mer, eller kontakta oss direkt för en skräddarsydd rekommendation.
             </p>
-          </div>
-        </section>
-
-        <section className="py-20 bg-white relative">
-          <div className="absolute inset-0 heritage-pattern"></div>
-          <div className="container mx-auto px-6 text-center relative z-10">
-            <div className="max-w-4xl mx-auto">
-              <p className="text-lg text-slate-600 mb-12 leading-relaxed">
-                Vi analyserar era krav på funktion, estetik och kostnadseffektivitet för att säkerställa att ert projekt 
-                får den optimala ytbehandlingen. Genom vårt nätverk erbjuder vi en komplett portfölj av industrins främsta metoder. 
-                Utforska våra kärnområden nedan för att lära dig mer, eller kontakta oss direkt för en skräddarsydd rekommendation.
-              </p>
-            </div>
           </div>
         </section>
 
