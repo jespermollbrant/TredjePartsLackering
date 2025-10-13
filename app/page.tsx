@@ -482,6 +482,9 @@ export default function Page() {
             <a href="#why-us" className="text-slate-600 hover:text-brand-yellow transition-colors duration-200">
               Varför Oss?
             </a>
+            <a href="/om" className="text-slate-600 hover:text-brand-green transition-colors duration-200">
+              Om oss
+            </a>
           </div>
           <a
             href="#quote"
@@ -1302,6 +1305,9 @@ export default function Page() {
             </a>
             <a href="#quote" className="hover:text-brand-yellow transition-colors duration-200">
               Offert
+            </a>
+            <a href="/om" className="hover:text-brand-green transition-colors duration-200">
+              Om oss
             </a>
           </div>
           <p className="mt-6 text-sm text-slate-500">
