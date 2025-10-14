@@ -4,6 +4,7 @@ import { useEffect, useRef, useState } from "react";
 
 export default function Page() {
   const [activeTab, setActiveTab] = useState<"powder" | "wet" | "blasting" | "corrosion">("powder");
+  const [quoteTab, setQuoteTab] = useState<"detailed" | "quick" | "contact">("detailed");
   // const [partnerSearch] = useState("");
   const [showEndCustomer, setShowEndCustomer] = useState(false);
   const [geminiLoading, setGeminiLoading] = useState(false);
@@ -907,19 +908,65 @@ export default function Page() {
           <div className="absolute inset-0 bg-gradient-brand opacity-10"></div>
           <div className="container mx-auto px-6 relative z-10">
             <div className="text-center">
-              <h2 className="text-3xl font-bold mb-4 text-white">Starta din förfrågan idag</h2>
+              <h2 className="text-3xl font-bold mb-4 text-white">Starta din förfrågan</h2>
               <p className="text-slate-300 max-w-2xl mx-auto mb-10">
-                Fyll i formuläret nedan så noggrant du kan. Ju mer information vi får, desto snabbare och mer exakt blir din offert. Vi återkommer normalt inom 24 timmar.
+                Oavsett om du har en komplett specifikation eller bara en idé, så hjälper vi dig. Välj det alternativ nedan som passar dig bäst. Vi återkommer alltid snabbt, oftast inom en arbetsdag.
               </p>
             </div>
-            <form
-              onSubmit={handleSubmit}
-              className="max-w-3xl mx-auto bg-white text-slate-800 p-8 rounded-lg shadow-2xl space-y-6"
-            >
+            {/* Quote Tabs */}
+            <div className="max-w-3xl mx-auto">
+              <div className="flex border-b border-slate-300 bg-white rounded-t-lg">
+                <button
+                  type="button"
+                  onClick={() => setQuoteTab("detailed")}
+                  className={`flex-1 py-3 px-4 text-sm font-medium rounded-tl-lg ${
+                    quoteTab === "detailed"
+                      ? "bg-white text-brand-orange border-b-2 border-brand-orange"
+                      : "text-slate-600 hover:text-slate-800 hover:bg-slate-50"
+                  }`}
+                >
+                  Detaljerad Offert
+                </button>
+                <button
+                  type="button"
+                  onClick={() => setQuoteTab("quick")}
+                  className={`flex-1 py-3 px-4 text-sm font-medium ${
+                    quoteTab === "quick"
+                      ? "bg-white text-brand-orange border-b-2 border-brand-orange"
+                      : "text-slate-600 hover:text-slate-800 hover:bg-slate-50"
+                  }`}
+                >
+                  Snabb Förfrågan
+                </button>
+                <button
+                  type="button"
+                  onClick={() => setQuoteTab("contact")}
+                  className={`flex-1 py-3 px-4 text-sm font-medium rounded-tr-lg ${
+                    quoteTab === "contact"
+                      ? "bg-white text-brand-orange border-b-2 border-brand-orange"
+                      : "text-slate-600 hover:text-slate-800 hover:bg-slate-50"
+                  }`}
+                >
+                  Direktkontakt
+                </button>
+              </div>
+
+              {/* Tab Content */}
+              <div className="bg-white rounded-b-lg shadow-2xl text-slate-800">
+                {quoteTab === "detailed" && (
+                  <form
+                    onSubmit={handleSubmit}
+                    className="p-8 space-y-6 text-slate-800"
+                  >
               <fieldset className="border-t border-slate-200 pt-6">
                 <legend className="text-lg font-semibold text-slate-800 mb-4">
                   Kundinformation
                 </legend>
+                <div className="mb-4 p-3 bg-blue-50 border border-blue-200 rounded-md">
+                  <p className="text-sm text-blue-800">
+                    <strong>Psst!</strong> Inga fält är obligatoriska (förutom e-post). Fyll i det du vet – formuläret är en guide för att hjälpa dig, så hjälper vi dig med resten.
+                  </p>
+                </div>
                 <div className="space-y-4">
                   <div>
                     <label htmlFor="company-name" className="block text-sm font-medium text-slate-700">
@@ -929,7 +976,7 @@ export default function Page() {
                       type="text"
                       id="company-name"
                       name="company-name"
-                      className="mt-1 block w-full px-3 py-2 border border-slate-300 rounded-md shadow-sm form-input"
+                      className="mt-1 block w-full px-3 py-2 border border-slate-300 rounded-md shadow-sm form-input text-slate-800"
                     />
                   </div>
                   <div className="grid md:grid-cols-2 gap-6">
@@ -941,7 +988,7 @@ export default function Page() {
                         type="text"
                         id="contact-name"
                         name="contact-name"
-                        className="mt-1 block w-full px-3 py-2 border border-slate-300 rounded-md shadow-sm form-input"
+                        className="mt-1 block w-full px-3 py-2 border border-slate-300 rounded-md shadow-sm form-input text-slate-800"
                       />
                     </div>
                     <div>
@@ -952,7 +999,7 @@ export default function Page() {
                         type="text"
                         id="contact-role"
                         name="contact-role"
-                        className="mt-1 block w-full px-3 py-2 border border-slate-300 rounded-md shadow-sm form-input"
+                        className="mt-1 block w-full px-3 py-2 border border-slate-300 rounded-md shadow-sm form-input text-slate-800"
                       />
                     </div>
                   </div>
@@ -965,7 +1012,7 @@ export default function Page() {
                       id="contact-email"
                         name="contact-email"
                       required
-                      className="mt-1 block w-full px-3 py-2 border border-slate-300 rounded-md shadow-sm form-input"
+                      className="mt-1 block w-full px-3 py-2 border border-slate-300 rounded-md shadow-sm form-input text-slate-800"
                     />
                   </div>
                 </div>
@@ -985,7 +1032,7 @@ export default function Page() {
                         type="number"
                         id="quantity"
                         name="quantity"
-                        className="mt-1 block w-full px-3 py-2 border border-slate-300 rounded-md shadow-sm form-input"
+                        className="mt-1 block w-full px-3 py-2 border border-slate-300 rounded-md shadow-sm form-input text-slate-800"
                       />
                     </div>
                     <div>
@@ -996,7 +1043,7 @@ export default function Page() {
                         type="number"
                         id="volume-half-year"
                         name="volume-half-year"
-                        className="mt-1 block w-full px-3 py-2 border border-slate-300 rounded-md shadow-sm form-input"
+                        className="mt-1 block w-full px-3 py-2 border border-slate-300 rounded-md shadow-sm form-input text-slate-800"
                       />
                     </div>
                   </div>
@@ -1008,9 +1055,26 @@ export default function Page() {
                       type="text"
                       id="color"
                       name="color"
-                      required
-                      className="mt-1 block w-full px-3 py-2 border border-slate-300 rounded-md shadow-sm form-input"
+                      className="mt-1 block w-full px-3 py-2 border border-slate-300 rounded-md shadow-sm form-input text-slate-800"
                     />
+                  </div>
+                  <div>
+                    <label htmlFor="gloss-level" className="block text-sm font-medium text-slate-700">
+                      Önskad Glans
+                    </label>
+                    <select
+                      id="gloss-level"
+                      name="gloss-level"
+                      className="mt-1 block w-full px-3 py-2 border border-slate-300 bg-white rounded-md shadow-sm form-input text-slate-800"
+                    >
+                      <option>Välj glansgrad...</option>
+                      <option value="matt">Matt (0-10)</option>
+                      <option value="sidenmatt">Sidenmatt (11-35)</option>
+                      <option value="halvblank">Halvblank (36-60)</option>
+                      <option value="blank">Blank (61-80)</option>
+                      <option value="hogblank">Högblank (81+)</option>
+                      <option value="okant">Vet ej / Ospecificerat</option>
+                    </select>
                   </div>
                   <div>
                     <label htmlFor="surface-treatment-type" className="block text-sm font-medium text-slate-700">
@@ -1020,8 +1084,8 @@ export default function Page() {
                       type="text"
                       id="surface-treatment-type"
                       name="surface-treatment-type"
-                      className="mt-1 block w-full px-3 py-2 border border-slate-300 rounded-md shadow-sm form-input"
-                      placeholder="Ex: Pulverlackering, Våtlackering, etc."
+                      className="mt-1 block w-full px-3 py-2 border border-slate-300 rounded-md shadow-sm form-input text-slate-800"
+                      placeholder="Ex: Pulverlackering, våtlackering, eller 'jag behöver hjälp att välja'"
                     />
                   </div>
                   <div>
@@ -1054,7 +1118,7 @@ export default function Page() {
                     <select
                       id="finish-level"
                       name="finish-level"
-                      className="mt-1 block w-full px-3 py-2 border border-slate-300 bg-white rounded-md shadow-sm form-input"
+                      className="mt-1 block w-full px-3 py-2 border border-slate-300 bg-white rounded-md shadow-sm form-input text-slate-800"
                     >
                       <option>Välj nivå...</option>
                       <option value="low">Lägre nivå (t.ex. industri, dold yta)</option>
@@ -1078,7 +1142,7 @@ export default function Page() {
                       id="quality-needs"
                       name="quality-needs"
                       rows={2}
-                      className="mt-1 block w-full px-3 py-2 border border-slate-300 rounded-md shadow-sm form-input"
+                      className="mt-1 block w-full px-3 py-2 border border-slate-300 rounded-md shadow-sm form-input text-slate-800"
                       placeholder="Ex: Hög finish, klass C4, etc."
                     />
                   </div>
@@ -1090,7 +1154,7 @@ export default function Page() {
                       id="masking-info"
                       name="masking-info"
                       rows={3}
-                      className="mt-1 block w-full px-3 py-2 border border-slate-300 rounded-md shadow-sm form-input"
+                      className="mt-1 block w-full px-3 py-2 border border-slate-300 rounded-md shadow-sm form-input text-slate-800"
                       placeholder="Beskriv vilka ytor som ska målas, och vilka ytor som eventuellt ska maskeras, t.ex. gängade hål, anliggningsytor..."
                     />
                   </div>
@@ -1102,8 +1166,8 @@ export default function Page() {
                       type="text"
                       id="pretreatment"
                       name="pretreatment"
-                      className="mt-1 block w-full px-3 py-2 border border-slate-300 rounded-md shadow-sm form-input"
-                      placeholder="Ex: blästrat, galvat, oljigt..."
+                      className="mt-1 block w-full px-3 py-2 border border-slate-300 rounded-md shadow-sm form-input text-slate-800"
+                      placeholder="Ex: Obehandlat stål, blästrat, galvat, oljigt..."
                     />
                   </div>
                   <div>
@@ -1170,7 +1234,7 @@ export default function Page() {
                         type="date"
                         id="delivery-date"
                       name="delivery-date"
-                        className="mt-1 block w-full px-3 py-2 border border-slate-300 rounded-md shadow-sm form-input"
+                        className="mt-1 block w-full px-3 py-2 border border-slate-300 rounded-md shadow-sm form-input text-slate-800"
                       />
                     </div>
                     <div>
@@ -1233,7 +1297,7 @@ export default function Page() {
                           type="text"
                           id="end-customer-name"
                           name="end-customer-name"
-                          className="mt-1 block w-full px-3 py-2 border border-slate-300 rounded-md shadow-sm form-input"
+                          className="mt-1 block w-full px-3 py-2 border border-slate-300 rounded-md shadow-sm form-input text-slate-800"
                         />
                       </div>
                       <div>
@@ -1244,7 +1308,7 @@ export default function Page() {
                           id="end-customer-address"
                           name="end-customer-address"
                           rows={2}
-                          className="mt-1 block w-full px-3 py-2 border border-slate-300 rounded-md shadow-sm form-input"
+                          className="mt-1 block w-full px-3 py-2 border border-slate-300 rounded-md shadow-sm form-input text-slate-800"
                         />
                       </div>
                     </div>
@@ -1282,6 +1346,116 @@ export default function Page() {
                 </button>
               </div>
             </form>
+                )}
+
+                {quoteTab === "quick" && (
+                  <div className="p-8 text-slate-800">
+                    <h3 className="text-xl font-semibold text-slate-800 mb-4">Beskriv ditt behov</h3>
+                    <p className="text-slate-600 mb-6">
+                      Har du inte alla detaljer? Inga problem. Beskriv ditt projekt med egna ord, bifoga en fil om du har en, så återkommer vi med rätt frågor och en plan för hur vi kan hjälpa dig.
+                    </p>
+                    <form onSubmit={handleSubmit} className="space-y-6">
+                      <div className="grid md:grid-cols-2 gap-6">
+                        <div>
+                          <label htmlFor="quick-contact-name" className="block text-sm font-medium text-slate-700">
+                            Kontaktperson
+                          </label>
+                          <input
+                            type="text"
+                            id="quick-contact-name"
+                            name="contact-name"
+                            className="mt-1 block w-full px-3 py-2 border border-slate-300 rounded-md shadow-sm form-input text-slate-800"
+                          />
+                        </div>
+                        <div>
+                          <label htmlFor="quick-company" className="block text-sm font-medium text-slate-700">
+                            Företag
+                          </label>
+                          <input
+                            type="text"
+                            id="quick-company"
+                            name="company-name"
+                            className="mt-1 block w-full px-3 py-2 border border-slate-300 rounded-md shadow-sm form-input text-slate-800"
+                          />
+                        </div>
+                      </div>
+                      <div>
+                        <label htmlFor="quick-email" className="block text-sm font-medium text-slate-700">
+                          E-post *
+                        </label>
+                        <input
+                          type="email"
+                          id="quick-email"
+                          name="contact-email"
+                          required
+                          className="mt-1 block w-full px-3 py-2 border border-slate-300 rounded-md shadow-sm form-input text-slate-800"
+                        />
+                      </div>
+                      <div>
+                        <label htmlFor="quick-description" className="block text-sm font-medium text-slate-700">
+                          Beskriv ditt behov
+                        </label>
+                        <textarea
+                          id="quick-description"
+                          name="quick-description"
+                          rows={6}
+                          className="mt-1 block w-full px-3 py-2 border border-slate-300 rounded-md shadow-sm form-input text-slate-800"
+                          placeholder="Beskriv ditt projekt, material, antal, färgönskemål, leveransdatum eller andra detaljer du vet..."
+                        />
+                      </div>
+                      <div>
+                        <label htmlFor="quick-file-upload" className="block text-sm font-medium text-slate-700">
+                          Ladda upp fil (valfritt)
+                        </label>
+                        <input
+                          type="file"
+                          id="quick-file-upload"
+                          name="drawing-upload"
+                          className="mt-1 block w-full text-sm text-slate-500 file:mr-4 file:py-2 file:px-4 file:rounded-full file:border-0 file:text-sm file:font-semibold file:bg-blue-50 file:text-blue-700 hover:file:bg-blue-100"
+                        />
+                      </div>
+                      <div className="pt-4">
+                        <button
+                          type="submit"
+                          className="w-full btn-brand text-lg py-3 px-6"
+                        >
+                          Skicka Förfrågan
+                        </button>
+                      </div>
+                    </form>
+                  </div>
+                )}
+
+                {quoteTab === "contact" && (
+                  <div className="p-8 text-center text-slate-800">
+                    <h3 className="text-xl font-semibold text-slate-800 mb-4">Kontakta oss direkt</h3>
+                    <p className="text-slate-600 mb-8">
+                      Föredrar du att maila eller ringa? Här hittar du våra kontaktuppgifter. Vi ser fram emot att höra från dig!
+                    </p>
+                    <div className="space-y-6">
+                      <div className="bg-slate-50 rounded-lg p-6">
+                        <h4 className="text-lg font-semibold text-slate-800 mb-2">E-post</h4>
+                        <a 
+                          href="mailto:jesper@3plackering.com" 
+                          className="text-brand-orange hover:text-brand-orange/80 text-lg font-medium"
+                        >
+                          jesper@3plackering.com
+                        </a>
+                      </div>
+                      <div className="bg-slate-50 rounded-lg p-6">
+                        <h4 className="text-lg font-semibold text-slate-800 mb-2">Telefon</h4>
+                        <a 
+                          href="tel:0708214708" 
+                          className="text-brand-orange hover:text-brand-orange/80 text-lg font-medium"
+                        >
+                          070-821 47 08
+                        </a>
+                      </div>
+                    </div>
+                  </div>
+                )}
+              </div>
+            </div>
           </div>
         </section>
       </main>

@@ -21,9 +21,11 @@ export async function POST(req: NextRequest) {
     const quantity = Number(form.get("quantity") || 0);
     const volumeHalfYear = Number(form.get("volume-half-year") || 0);
     const color = String(form.get("color") || "");
+    const glossLevel = String(form.get("gloss-level") || "");
     const surfaceTreatmentType = String(form.get("surface-treatment-type") || "");
     const usage = String(form.get("usage") || "");
     const finishLevel = String(form.get("finish-level") || "");
+    const quickDescription = String(form.get("quick-description") || "");
     const qualityNeeds = String(form.get("quality-needs") || "");
     const maskingInfo = String(form.get("masking-info") || "");
     const pretreatment = String(form.get("pretreatment") || "");
@@ -45,9 +47,11 @@ export async function POST(req: NextRequest) {
       quantity,
       volumeHalfYear,
       color,
+      glossLevel,
       surfaceTreatmentType,
       usage,
       finishLevel,
+      quickDescription,
       qualityNeeds,
       maskingInfo,
       pretreatment,
