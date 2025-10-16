@@ -16,7 +16,7 @@ export default function BlogPostPage() {
           förklarar.
         </h1>
         <p>
-          När är "bra nog" verkligen bra nog? Alla vill ha en "bra finish" på sina
+          När är &quot;bra nog&quot; verkligen bra nog? Alla vill ha en &quot;bra finish&quot; på sina
           lackerade produkter. Men vad betyder det egentligen? En lackerad yta som
           är perfekt för en dold industridetalj är långt ifrån acceptabel för en
           designmöbel. Utan en gemensam standard blir bedömningen av kvalitet

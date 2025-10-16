@@ -3,7 +3,6 @@
 import { useEffect, useRef, useState } from "react";
 
 export default function Page() {
-  const [activeTab, setActiveTab] = useState<"powder" | "wet" | "blasting" | "corrosion">("powder");
   const [quoteTab, setQuoteTab] = useState<"detailed" | "quick" | "contact">("detailed");
   // const [partnerSearch] = useState("");
   const [showEndCustomer, setShowEndCustomer] = useState(false);
