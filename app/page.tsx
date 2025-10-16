@@ -463,125 +463,7 @@ export default function Page() {
 
   return (
     <div className="text-slate-700">
-      <header className="bg-white/90 backdrop-blur-md sticky top-0 z-50 shadow-sm border-b border-brand-orange/20">
-        <nav className="container mx-auto px-6 py-4 flex justify-between items-center">
-          <a href="#" className="flex items-center space-x-3">
-            <span className="text-2xl font-bold text-slate-800 text-brand-orange">
-              3. P. Lackering
-              <span className="text-slate-800 text-sm"> - Förmedlare & Oberoende Expert av Lackering</span>
-            </span>
-          </a>
-          <button
-            type="button"
-            className="md:hidden inline-flex items-center justify-center rounded-md p-2 text-slate-700 hover:bg-slate-100 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-brand-orange"
-            aria-controls="mobile-menu"
-            aria-expanded={mobileMenuOpen ? "true" : "false"}
-            onClick={() => setMobileMenuOpen((v) => !v)}
-          >
-            <svg className="h-6 w-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-              {!mobileMenuOpen ? (
-                <>
-                  <line x1="3" y1="6" x2="21" y2="6" />
-                  <line x1="3" y1="12" x2="21" y2="12" />
-                  <line x1="3" y1="18" x2="21" y2="18" />
-                </>
-              ) : (
-                <>
-                  <line x1="18" y1="6" x2="6" y2="18" />
-                  <line x1="6" y1="6" x2="18" y2="18" />
-                </>
-              )}
-            </svg>
-          </button>
-          <div className="hidden md:flex items-center space-x-6">
-            <div className="relative group">
-              <button
-                type="button"
-                className="text-slate-600 hover:text-brand-orange transition-colors duration-200 inline-flex items-center"
-                aria-haspopup="true"
-                aria-expanded="false"
-              >
-                Tjänster
-                <svg className="ml-2 h-4 w-4 text-slate-400 group-hover:text-brand-orange" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
-                  <path fillRule="evenodd" d="M5.23 7.21a.75.75 0 011.06.02L10 10.94l3.71-3.71a.75.75 0 111.06 1.06l-4.24 4.24a.75.75 0 01-1.06 0L5.25 8.29a.75.75 0 01-.02-1.08z" clipRule="evenodd" />
-                </svg>
-              </button>
-              <div className="invisible opacity-0 group-hover:visible group-hover:opacity-100 transition-opacity duration-150 absolute left-0 mt-2 w-64 rounded-md border border-slate-200 bg-white shadow-lg z-50">
-                <div className="py-2">
-                  <a href="/ytbehandlingar" className="block px-4 py-2 text-sm text-slate-700 hover:bg-slate-50">
-                    Översikt Ytbehandlingar
-                  </a>
-                  <a href="/ytbehandlingar/pulverlackering" className="block px-4 py-2 text-sm text-slate-700 hover:bg-slate-50">
-                    Pulverlackering
-                  </a>
-                  <a href="/ytbehandlingar/vatlackering" className="block px-4 py-2 text-sm text-slate-700 hover:bg-slate-50">
-                    Våtlackering
-                  </a>
-                  <a href="/ytbehandlingar/blastring" className="block px-4 py-2 text-sm text-slate-700 hover:bg-slate-50">
-                    Förbehandling & Rengöring
-                  </a>
-                </div>
-              </div>
-            </div>
-            <a href="#industries" className="text-slate-600 hover:text-brand-red transition-colors duration-200">
-              Branscher
-            </a>
-            <a href="/kunskapsbank" className="text-slate-600 hover:text-brand-blue transition-colors duration-200">
-              Kunskapsbank
-            </a>
-            <a href="/om" className="text-slate-600 hover:text-brand-green transition-colors duration-200">
-              Om oss
-            </a>
-            <a href="/kontakt" className="text-slate-600 hover:text-brand-yellow transition-colors duration-200">
-              Kontakt
-            </a>
-          </div>
-          <a
-            href="#quote"
-            className="btn-brand"
-          >
-            Offertförfrågan
-          </a>
-        </nav>
-        {/* Mobile menu panel */}
-        {mobileMenuOpen && (
-          <div id="mobile-menu" className="md:hidden border-t border-slate-200 bg-white">
-            <div className="container mx-auto px-6 py-4 space-y-1">
-              <button
-                type="button"
-                className="w-full flex items-center justify-between py-2 text-slate-700"
-                aria-controls="mobile-services"
-                aria-expanded={mobileServicesOpen ? "true" : "false"}
-                onClick={() => setMobileServicesOpen((v) => !v)}
-              >
-                <span>Tjänster</span>
-                <svg className="h-5 w-5 text-slate-500" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
-                  {!mobileServicesOpen ? (
-                    <path fillRule="evenodd" d="M5.23 7.21a.75.75 0 011.06.02L10 10.94l3.71-3.71a.75.75 0 111.06 1.06l-4.24 4.24a.75.75 0 01-1.06 0L5.25 8.29a.75.75 0 01-.02-1.08z" clipRule="evenodd" />
-                  ) : (
-                    <path fillRule="evenodd" d="M14.77 12.79a.75.75 0 01-1.06-.02L10 9.06l-3.71 3.71a.75.75 0 11-1.06-1.06l4.24-4.24a.75.75 0 011.06 0l4.24 4.24c.3.3.3.78 0 1.08z" clipRule="evenodd" />
-                  )}
-                </svg>
-              </button>
-              {mobileServicesOpen && (
-                <div id="mobile-services" className="pl-4 space-y-1 pb-2">
-                  <a href="/ytbehandlingar" className="block py-2 text-slate-700">Översikt Ytbehandlingar</a>
-                  <a href="/ytbehandlingar/pulverlackering" className="block py-2 text-slate-700">Pulverlackering</a>
-                  <a href="/ytbehandlingar/vatlackering" className="block py-2 text-slate-700">Våtlackering</a>
-                  <a href="/ytbehandlingar/blastring" className="block py-2 text-slate-700">Förbehandling & Rengöring</a>
-                </div>
-              )}
-              <a href="#industries" className="block py-2 text-slate-700">Branscher</a>
-              <a href="/kunskapsbank" className="block py-2 text-slate-700">Kunskapsbank</a>
-              <a href="/om" className="block py-2 text-slate-700">Om oss</a>
-              <a href="/kontakt" className="block py-2 text-slate-700">Kontakt</a>
-              <a href="#quote" className="mt-2 inline-flex w-full items-center justify-center rounded-md bg-orange-600 px-4 py-2 text-white font-semibold hover:bg-orange-700">
-                Offertförfrågan
-              </a>
-            </div>
-          </div>
-        )}
-      </header>
+      {/* Header moved to global layout */}
 
       <main>
         <section id="hero" className="bg-gradient-brand py-20 md:py-32 relative overflow-hidden">
@@ -685,46 +567,6 @@ export default function Page() {
                   )}
                 </div>
               ))}
-            </div>
-          </div>
-        </section>
-
-
-        {/* services moved after industries */}
-
-
-        <section id="why-us" className="py-20 bg-white relative">
-          <div className="absolute inset-0 heritage-pattern"></div>
-          <div className="container mx-auto px-6 text-center relative z-10">
-            <h2 className="section-title text-brand-yellow">Varför välja 3P Lackering?</h2>
-            <p className="section-subtitle">
-              Kunder väljer oss för att vi erbjuder mer än bara lackering. Vi är er strategiska partner som levererar en helhetslösning som sparar tid, minskar risker och garanterar ett resultat av högsta klass.
-            </p>
-            <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8 max-w-7xl mx-auto text-left">
-              <div className="card-brand p-6 hover:border-brand-orange">
-                <h3 className="text-xl font-semibold text-brand-orange mb-2">Riskhantering & Resiliens</h3>
-                <p className="text-slate-600">
-                  Bygg en motståndskraftig försörjningskedja. Att förlita sig på en enda leverantör är en risk. Vad händer vid kapacitetsbrist eller produktionsstopp? Vi agerar som ert förkvalificerade skyddsnät och säkrar er produktion genom att snabbt kunna matcha ert behov med rätt kapacitet i vårt nätverk. Det minimerar störningar och skapar trygghet.
-                </p>
-              </div>
-              <div className="card-brand p-6 hover:border-brand-blue" style={{borderLeftColor: 'var(--color-blue)'}}>
-                <h3 className="text-xl font-semibold text-brand-blue mb-2">Flexibilitet för Specialiserade Behov</h3>
-                <p className="text-slate-600">
-                  Era behov är sällan statiska. Nya produkter, unika material eller varierande volymer kräver anpassningsförmåga. Vi matchar varje unikt uppdrag – från enstaka prototyper till stora serier – med den specialist som har exakt rätt utrustning och expertis för jobbet.
-                </p>
-              </div>
-              <div className="card-brand p-6 hover:border-brand-green" style={{borderLeftColor: 'var(--color-green)'}}>
-                <h3 className="text-xl font-semibold text-brand-green mb-2">Effektivitet & Minskad Administration</h3>
-                <p className="text-slate-600">
-                  Enkelhet som sparar tid och resurser. Glöm tidskrävande administration och hantering av flera leverantörer. Vi är er enda, kunniga kontaktpunkt som sköter allt från offert och teknisk specifikation till logistik och uppföljning. Ni får en snabb och smidig process så att ni kan fokusera på er kärnverksamhet.
-                </p>
-              </div>
-              <div className="card-brand p-6 hover:border-brand-yellow" style={{borderLeftColor: 'var(--color-yellow)'}}>
-                <h3 className="text-xl font-semibold text-brand-yellow mb-2">Kvalitetssäkring & Kontroll</h3>
-                <p className="text-slate-600">
-                  Garanterad kvalitet i varje steg. Med vår bakgrund inom industrilackering agerar vi som er oberoende expert. Vi kvalitetssäkrar hela processen, från förbehandling till slutinspektion, för att säkerställa att resultatet uppfyller era specifikationer och krav. Det är er trygghet för ett perfekt resultat, varje gång.
-                </p>
-              </div>
             </div>
           </div>
         </section>
@@ -1389,35 +1231,7 @@ export default function Page() {
         </section>
       </main>
 
-      <footer className="bg-gradient-to-r from-slate-900 via-slate-800 to-slate-900 text-slate-400 py-12 border-t border-brand-orange/20">
-        <div className="container mx-auto px-6 text-center">
-          <div className="flex items-center justify-center space-x-3 mb-4">
-            <p className="font-bold text-white text-lg">3. P. Lackering - Oberoende Förmedlare & Expert av Industrilackering</p>
-          </div>
-          <p> Mail: jesper@3plackering.com</p>
-          <p> Telefon: 0708214708</p>
-          <div className="mt-4 space-x-6">
-            <a href="#process" className="hover:text-brand-orange transition-colors duration-200">
-              Process
-            </a>
-            <a href="/ytbehandlingar" className="hover:text-brand-blue transition-colors duration-200">
-              Ytbehandlingar
-            </a>
-            <a href="#industries" className="hover:text-brand-red transition-colors duration-200">
-              Branscher
-            </a>
-            <a href="#quote" className="hover:text-brand-yellow transition-colors duration-200">
-              Offert
-            </a>
-            <a href="/om" className="hover:text-brand-green transition-colors duration-200">
-              Om oss
-            </a>
-          </div>
-          <p className="mt-6 text-sm text-slate-500">
-            &copy; 2025 - 3. P. Lackering - Oberoende Förmedlare & Expert av Industrilackering
-          </p>
-        </div>
-      </footer>
+      {/* Footer moved to global layout */}
 
       {isModalOpen && (
         <div className="fixed inset-0 bg-black bg-opacity-75 flex items-center justify-center p-4 z-50">
