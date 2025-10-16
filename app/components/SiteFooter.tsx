@@ -8,16 +8,16 @@ export default function SiteFooter() {
         <p> Mail: jesper@3plackering.com</p>
         <p> Telefon: 0708214708</p>
         <div className="mt-4 space-x-6">
-          <a href="#process" className="hover:text-brand-orange transition-colors duration-200">
+          <a href="https://www.3plackering.com/#process" className="hover:text-brand-orange transition-colors duration-200">
             Process
           </a>
           <a href="/ytbehandlingar" className="hover:text-brand-blue transition-colors duration-200">
             Ytbehandlingar
           </a>
-          <a href="#industries" className="hover:text-brand-red transition-colors duration-200">
+          <a href="https://www.3plackering.com/#industries" className="hover:text-brand-red transition-colors duration-200">
             Branscher
           </a>
-          <a href="#quote" className="hover:text-brand-yellow transition-colors duration-200">
+          <a href="https://www.3plackering.com/#quote" className="hover:text-brand-yellow transition-colors duration-200">
             Offert
           </a>
           <a href="/om" className="hover:text-brand-green transition-colors duration-200">

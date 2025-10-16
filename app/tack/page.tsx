@@ -31,22 +31,7 @@ export default function ThankYouPage() {
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-slate-50 to-white">
-      <header className="bg-white/90 backdrop-blur-md sticky top-0 z-50 shadow-sm border-b border-brand-orange/20">
-        <nav className="container mx-auto px-6 py-4 flex justify-between items-center">
-          <Link href="/" className="flex items-center space-x-3">
-            <span className="text-2xl font-bold text-slate-800 text-brand-orange">
-              3. P. Lackering
-              <span className="text-slate-800 text-sm"> - Förmedlare & Oberoende Expert av Lackering</span>
-            </span>
-          </Link>
-          <Link
-            href="/"
-            className="btn-brand"
-          >
-            Tillbaka till startsidan
-          </Link>
-        </nav>
-      </header>
+      {/* Header is provided globally in layout */}
 
       <main className="container mx-auto px-6 py-20">
         <div className="max-w-4xl mx-auto text-center">
@@ -178,31 +163,7 @@ export default function ThankYouPage() {
         </div>
       </main>
 
-      <footer className="bg-gradient-to-r from-slate-900 via-slate-800 to-slate-900 text-slate-400 py-12 border-t border-brand-orange/20">
-        <div className="container mx-auto px-6 text-center">
-          <div className="flex items-center justify-center space-x-3 mb-4">
-            <p className="font-bold text-white text-lg">3. P. Lackering - Oberoende Förmedlare & Expert av Industrilackering</p>
-          </div>
-          <p> Telefon: 0708214708</p>
-          <div className="mt-4 space-x-6">
-            <Link href="/#process" className="hover:text-brand-orange transition-colors duration-200">
-              Process
-            </Link>
-            <Link href="/#services" className="hover:text-brand-blue transition-colors duration-200">
-              Tjänster
-            </Link>
-            <Link href="/#industries" className="hover:text-brand-red transition-colors duration-200">
-              Branscher
-            </Link>
-            <Link href="/#quote" className="hover:text-brand-yellow transition-colors duration-200">
-              Offert
-            </Link>
-          </div>
-          <p className="mt-6 text-sm text-slate-500">
-            &copy; 2025 - 3. P. Lackering - Oberoende Förmedlare & Expert av Industrilackering
-          </p>
-        </div>
-      </footer>
+      {/* Footer is provided globally in layout */}
     </div>
   );
 }

@@ -5,7 +5,7 @@ import Link from "next/link";
 export default function GlansforkromningPage() {
   return (
     <div className="text-slate-700">
-      <header className="bg-white/90 backdrop-blur-md sticky top-0 z-50 shadow-sm border-b border-brand-orange/20">
+      {/* Header is provided globally in layout */}
         <nav className="container mx-auto px-6 py-4 flex justify-between items-center">
           <Link href="/" className="flex items-center space-x-3">
             <span className="text-2xl font-bold text-slate-800 text-brand-orange">
@@ -158,7 +158,7 @@ export default function GlansforkromningPage() {
         </section>
       </main>
 
-      <footer className="bg-gradient-to-r from-slate-900 via-slate-800 to-slate-900 text-slate-400 py-12 border-t border-brand-orange/20">
+      {/* Footer is provided globally in layout */}
         <div className="container mx-auto px-6 text-center">
           <div className="flex items-center justify-center space-x-3 mb-4">
             <p className="font-bold text-white text-lg">3. P. Lackering - Oberoende Förmedlare & Expert av Industrilackering</p>

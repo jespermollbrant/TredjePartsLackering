@@ -81,7 +81,7 @@ export default function SiteHeader() {
               </div>
             )}
           </div>
-          <a href="#industries" className="text-slate-600 hover:text-brand-red transition-colors duration-200">
+          <a href="https://www.3plackering.com/#industries" className="text-slate-600 hover:text-brand-red transition-colors duration-200">
             Branscher
           </a>
           <Link href="/kunskapsbank" className="text-slate-600 hover:text-brand-blue transition-colors duration-200">
