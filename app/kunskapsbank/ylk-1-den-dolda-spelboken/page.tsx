@@ -186,7 +186,7 @@ export default function Ylk1BlogPostPage() {
                   Guide: Hur bedömer man kvaliteten på en lackerad yta?
                 </Link>
               </h4>
-              <p className="mt-1 text-sm text-neutral-700">Vad betyder 'bra finish'? När är en defekt acceptabel? Vi går igenom branschpraxis...</p>
+              <p className="mt-1 text-sm text-neutral-700">Vad betyder &apos;bra finish&apos;? När är en defekt acceptabel? Vi går igenom branschpraxis...</p>
             </div>
           </div>
         </div>

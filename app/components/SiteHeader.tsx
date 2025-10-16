@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import Link from "next/link";
 
 export default function SiteHeader() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
@@ -10,12 +11,12 @@ export default function SiteHeader() {
   return (
     <header className="bg-white/90 backdrop-blur-md sticky top-0 z-50 shadow-sm border-b border-brand-orange/20">
       <nav className="container mx-auto px-6 py-4 flex justify-between items-center">
-        <a href="/" className="flex items-center space-x-3">
+        <Link href="/" className="flex items-center space-x-3">
           <span className="text-2xl font-bold text-slate-800 text-brand-orange">
             3. P. Lackering
             <span className="text-slate-800 text-sm"> - Förmedlare & Oberoende Expert av Lackering</span>
           </span>
-        </a>
+        </Link>
         <button
           type="button"
           className="md:hidden inline-flex items-center justify-center rounded-md p-2 text-slate-700 hover:bg-slate-100 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-brand-orange"
@@ -64,18 +65,18 @@ export default function SiteHeader() {
                 aria-label="Tjänster"
               >
                 <div className="py-2">
-                  <a href="/ytbehandlingar" className="block px-4 py-2 text-sm text-slate-700 hover:bg-slate-50" role="menuitem">
+                  <Link href="/ytbehandlingar" className="block px-4 py-2 text-sm text-slate-700 hover:bg-slate-50" role="menuitem">
                     Översikt Ytbehandlingar
-                  </a>
-                  <a href="/ytbehandlingar/pulverlackering" className="block px-4 py-2 text-sm text-slate-700 hover:bg-slate-50" role="menuitem">
+                  </Link>
+                  <Link href="/ytbehandlingar/pulverlackering" className="block px-4 py-2 text-sm text-slate-700 hover:bg-slate-50" role="menuitem">
                     Pulverlackering
-                  </a>
-                  <a href="/ytbehandlingar/vatlackering" className="block px-4 py-2 text-sm text-slate-700 hover:bg-slate-50" role="menuitem">
+                  </Link>
+                  <Link href="/ytbehandlingar/vatlackering" className="block px-4 py-2 text-sm text-slate-700 hover:bg-slate-50" role="menuitem">
                     Våtlackering
-                  </a>
-                  <a href="/ytbehandlingar/blastring" className="block px-4 py-2 text-sm text-slate-700 hover:bg-slate-50" role="menuitem">
+                  </Link>
+                  <Link href="/ytbehandlingar/blastring" className="block px-4 py-2 text-sm text-slate-700 hover:bg-slate-50" role="menuitem">
                     Förbehandling & Rengöring
-                  </a>
+                  </Link>
                 </div>
               </div>
             )}
@@ -83,15 +84,15 @@ export default function SiteHeader() {
           <a href="#industries" className="text-slate-600 hover:text-brand-red transition-colors duration-200">
             Branscher
           </a>
-          <a href="/kunskapsbank" className="text-slate-600 hover:text-brand-blue transition-colors duration-200">
+          <Link href="/kunskapsbank" className="text-slate-600 hover:text-brand-blue transition-colors duration-200">
             Kunskapsbank
-          </a>
-          <a href="/om" className="text-slate-600 hover:text-brand-green transition-colors duration-200">
+          </Link>
+          <Link href="/om" className="text-slate-600 hover:text-brand-green transition-colors duration-200">
             Om oss
-          </a>
-          <a href="/kontakt" className="text-slate-600 hover:text-brand-yellow transition-colors duration-200">
+          </Link>
+          <Link href="/kontakt" className="text-slate-600 hover:text-brand-yellow transition-colors duration-200">
             Kontakt
-          </a>
+          </Link>
         </div>
         <a
           href="#quote"
@@ -121,16 +122,16 @@ export default function SiteHeader() {
             </button>
             {mobileServicesOpen && (
               <div id="mobile-services" className="pl-4 space-y-1 pb-2">
-                <a href="/ytbehandlingar" className="block py-2 text-slate-700">Översikt Ytbehandlingar</a>
-                <a href="/ytbehandlingar/pulverlackering" className="block py-2 text-slate-700">Pulverlackering</a>
-                <a href="/ytbehandlingar/vatlackering" className="block py-2 text-slate-700">Våtlackering</a>
-                <a href="/ytbehandlingar/blastring" className="block py-2 text-slate-700">Förbehandling & Rengöring</a>
+                <Link href="/ytbehandlingar" className="block py-2 text-slate-700">Översikt Ytbehandlingar</Link>
+                <Link href="/ytbehandlingar/pulverlackering" className="block py-2 text-slate-700">Pulverlackering</Link>
+                <Link href="/ytbehandlingar/vatlackering" className="block py-2 text-slate-700">Våtlackering</Link>
+                <Link href="/ytbehandlingar/blastring" className="block py-2 text-slate-700">Förbehandling & Rengöring</Link>
               </div>
             )}
             <a href="#industries" className="block py-2 text-slate-700">Branscher</a>
-            <a href="/kunskapsbank" className="block py-2 text-slate-700">Kunskapsbank</a>
-            <a href="/om" className="block py-2 text-slate-700">Om oss</a>
-            <a href="/kontakt" className="block py-2 text-slate-700">Kontakt</a>
+            <Link href="/kunskapsbank" className="block py-2 text-slate-700">Kunskapsbank</Link>
+            <Link href="/om" className="block py-2 text-slate-700">Om oss</Link>
+            <Link href="/kontakt" className="block py-2 text-slate-700">Kontakt</Link>
             <a href="#quote" className="mt-2 inline-flex w-full items-center justify-center rounded-md bg-orange-600 px-4 py-2 text-white font-semibold hover:bg-orange-700">
               Offertförfrågan
             </a>

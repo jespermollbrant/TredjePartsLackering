@@ -14,8 +14,6 @@ export default function Page() {
   const selectedFilesRef = useRef<Map<string, File>>(new Map());
   const [uploadedFiles, setUploadedFiles] = useState<{ name: string; annotated: boolean }[]>([]);
   const [isModalOpen, setIsModalOpen] = useState(false);
-  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
-  const [mobileServicesOpen, setMobileServicesOpen] = useState(false);
   const canvasRef = useRef<HTMLCanvasElement | null>(null);
   const containerRef = useRef<HTMLDivElement | null>(null);
   const [currentTool, setCurrentTool] = useState<"paint" | "mask" | "pan">("paint");
