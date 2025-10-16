@@ -349,6 +349,33 @@ export default function YtbehandlingarPage() {
           </div>
         </section>
 
+        <section className="py-20 bg-gradient-to-br from-slate-50/50 to-white">
+          <div className="container mx-auto px-6">
+            <div className="max-w-6xl mx-auto">
+              <h2 className="text-3xl font-bold text-center mb-12 text-brand-orange">
+                6. Kunskapsguide
+              </h2>
+              <p className="text-lg text-slate-600 text-center mb-12 max-w-4xl mx-auto">
+                Förstå korrosivitetsklasser och välj rätt system baserat på miljö och livslängd.
+              </p>
+
+              <div className="grid md:grid-cols-1 gap-8 mb-16">
+                <Link href="/ytbehandlingar/korrosionsskydd" className="card-brand p-6 hover:border-brand-orange transition-all duration-300 group">
+                  <h3 className="text-xl font-semibold text-brand-orange mb-3 group-hover:text-brand-blue transition-colors">
+                    Korrosionsskydd (ISO 12944)
+                  </h3>
+                  <p className="text-slate-600 mb-4">
+                    Översikt av C1–C5, typiska miljöer och rekommenderade lösningar.
+                  </p>
+                  <span className="text-brand-orange font-medium group-hover:text-brand-blue transition-colors">
+                    Läs mer →
+                  </span>
+                </Link>
+              </div>
+            </div>
+          </div>
+        </section>
+
         <section className="py-20 bg-gradient-to-br from-slate-800 via-slate-900 to-slate-800 text-white relative overflow-hidden">
           <div className="absolute inset-0 bg-gradient-brand opacity-10"></div>
           <div className="container mx-auto px-6 relative z-10 text-center">
