@@ -127,6 +127,7 @@ export default function GlansforkromningPage() {
       </main>
 
       {/* Footer is provided globally in layout */}
+      <footer className="bg-slate-900 text-white py-12">
         <div className="container mx-auto px-6 text-center">
           <div className="flex items-center justify-center space-x-3 mb-4">
             <p className="font-bold text-white text-lg">3. P. Lackering - Oberoende Förmedlare & Expert av Industrilackering</p>
