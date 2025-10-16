@@ -29,6 +29,13 @@ const posts: Post[] = [
       "Vad YLK-1 betyder i praktiken: ansvarsfördelning, kravställning och hur du undviker tvister.",
     imageAlt: "Dokument och checklista för kravställning",
   },
+  {
+    slug: "bakom-kulisserna-automatiserad-pulverlackeringsanlaggning",
+    title: "Bakom kulisserna: Så fungerar en automatiserad pulverlackeringsanläggning",
+    excerpt:
+      "Steg-för-steg genom förbehandling, sprutkabin, härdning, återvinning och säkerhet.",
+    imageAlt: "Automatiserad sprutkabin med conveyor",
+  },
 ];
 
 export default function KunskapsbankPage() {

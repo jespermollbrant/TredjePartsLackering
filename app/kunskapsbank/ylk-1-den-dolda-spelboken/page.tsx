@@ -1,15 +1,53 @@
 import type { Metadata } from "next";
+import Script from "next/script";
 
 export const metadata: Metadata = {
   title: "YLK-1: Den dolda spelboken för industrilackering – 3. P. Lackering",
   description:
     "Praktisk guide till YLK-1: ansvarsfördelning, kravställning och hur du undviker tvister vid legoytbehandling.",
+  openGraph: {
+    type: "article",
+    title: "YLK-1: Den dolda spelboken för industrilackering",
+    description:
+      "YLK-1 i praktiken: ansvar, kravställning och hur du undviker tvister.",
+    siteName: "3. P. Lackering",
+    images: [
+      { url: "/icon-512.png", width: 512, height: 512, alt: "3. P. Lackering" },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "YLK-1: Den dolda spelboken för industrilackering",
+    description:
+      "YLK-1 i praktiken: ansvar, kravställning och hur du undviker tvister.",
+    images: ["/icon-512.png"],
+  },
 };
 
 export default function Ylk1BlogPostPage() {
   return (
     <main className="mx-auto max-w-3xl px-4 py-16">
       <article className="prose prose-neutral max-w-none">
+        <Script id="ld-article-ylk1" type="application/ld+json">
+          {JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "Article",
+            headline: "YLK-1: Den dolda spelboken för industrilackering",
+            description:
+              "YLK-1 i praktiken: ansvar, kravställning och hur du undviker tvister.",
+            author: { "@type": "Organization", name: "3. P. Lackering" },
+            publisher: {
+              "@type": "Organization",
+              name: "3. P. Lackering",
+              logo: { "@type": "ImageObject", url: "/icon-512.png" },
+            },
+            mainEntityOfPage: {
+              "@type": "WebPage",
+              "@id": "/kunskapsbank/ylk-1-den-dolda-spelboken",
+            },
+            image: ["/icon-512.png"],
+          })}
+        </Script>
         <h1>YLK-1: Den dolda spelboken för industrilackering – och varför den är avgörande för ditt projekt</h1>
         <p>
           <strong>Introduktion:</strong> Vem bär egentligen ansvaret? När du beställer en legoytbehandlingstjänst, som industrilackering, ingår du ett avtal. Men vad händer om resultatet inte blir som förväntat? Vem ansvarar om godset du skickar in har dolda defekter? Och vad är egentligen en &quot;rimlig&quot; kvalitetsnivå?

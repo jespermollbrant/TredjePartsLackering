@@ -1,16 +1,59 @@
 import type { Metadata } from "next";
+import Script from "next/script";
 
 export const metadata: Metadata = {
   title:
     "Guide: Hur bedömer man kvaliteten på en lackerad yta? – 3. P. Lackering",
   description:
     "En expertförklaring av hur kvalitet på lackerade ytor bedöms objektivt – avstånd, ljus och tid – samt vanliga defekter och hur vi säkerställer er kvalitet.",
+  openGraph: {
+    type: "article",
+    title: "Guide: Hur bedömer man kvaliteten på en lackerad yta?",
+    description:
+      "En expertförklaring av objektiv kvalitetsbedömning av lackerade ytor – avstånd, ljus och tid – samt vanliga defekter.",
+    siteName: "3. P. Lackering",
+    images: [
+      {
+        url: "/icon-512.png",
+        width: 512,
+        height: 512,
+        alt: "3. P. Lackering",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Guide: Hur bedömer man kvaliteten på en lackerad yta?",
+    description:
+      "En expertförklaring av objektiv kvalitetsbedömning av lackerade ytor – avstånd, ljus och tid – samt vanliga defekter.",
+    images: ["/icon-512.png"],
+  },
 };
 
 export default function BlogPostPage() {
   return (
     <main className="mx-auto max-w-3xl px-4 py-16">
       <article className="prose prose-neutral max-w-none">
+        <Script id="ld-article-kvalitet" type="application/ld+json">
+          {JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "Article",
+            headline: "Guide: Hur bedömer man kvaliteten på en lackerad yta?",
+            description:
+              "En expertförklaring av objektiv kvalitetsbedömning av lackerade ytor – avstånd, ljus och tid – samt vanliga defekter.",
+            author: { "@type": "Organization", name: "3. P. Lackering" },
+            publisher: {
+              "@type": "Organization",
+              name: "3. P. Lackering",
+              logo: { "@type": "ImageObject", url: "/icon-512.png" },
+            },
+            mainEntityOfPage: {
+              "@type": "WebPage",
+              "@id": "/kunskapsbank/guide-bedoma-kvalitet-lackerad-yta",
+            },
+            image: ["/icon-512.png"],
+          })}
+        </Script>
         <h1>
           Guide: Hur bedömer man kvaliteten på en lackerad yta? En expert
           förklarar.
