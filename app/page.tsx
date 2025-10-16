@@ -514,6 +514,42 @@ export default function Page() {
           </div>
         </section>
 
+        <section id="why-us" className="py-20 bg-white relative">
+          <div className="absolute inset-0 heritage-pattern"></div>
+          <div className="container mx-auto px-6 text-center relative z-10">
+            <h2 className="section-title text-brand-yellow">Varför välja 3P Lackering?</h2>
+            <p className="section-subtitle">
+              Kunder väljer oss för att vi erbjuder mer än bara lackering. Vi är er strategiska partner som levererar en helhetslösning som sparar tid, minskar risker och garanterar ett resultat av högsta klass.
+            </p>
+            <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8 max-w-7xl mx-auto text-left">
+              <div className="card-brand p-6 hover:border-brand-orange">
+                <h3 className="text-xl font-semibold text-brand-orange mb-2">Riskhantering & Resiliens</h3>
+                <p className="text-slate-600">
+                  Bygg en motståndskraftig försörjningskedja. Att förlita sig på en enda leverantör är en risk. Vad händer vid kapacitetsbrist eller produktionsstopp? Vi agerar som ert förkvalificerade skyddsnät och säkrar er produktion genom att snabbt kunna matcha ert behov med rätt kapacitet i vårt nätverk. Det minimerar störningar och skapar trygghet.
+                </p>
+              </div>
+              <div className="card-brand p-6 hover:border-brand-blue" style={{borderLeftColor: 'var(--color-blue)'}}>
+                <h3 className="text-xl font-semibold text-brand-blue mb-2">Flexibilitet för Specialiserade Behov</h3>
+                <p className="text-slate-600">
+                  Era behov är sällan statiska. Nya produkter, unika material eller varierande volymer kräver anpassningsförmåga. Vi matchar varje unikt uppdrag – från enstaka prototyper till stora serier – med den specialist som har exakt rätt utrustning och expertis för jobbet.
+                </p>
+              </div>
+              <div className="card-brand p-6 hover:border-brand-green" style={{borderLeftColor: 'var(--color-green)'}}>
+                <h3 className="text-xl font-semibold text-brand-green mb-2">Effektivitet & Minskad Administration</h3>
+                <p className="text-slate-600">
+                  Enkelhet som sparar tid och resurser. Glöm tidskrävande administration och hantering av flera leverantörer. Vi är er enda, kunniga kontaktpunkt som sköter allt från offert och teknisk specifikation till logistik och uppföljning. Ni får en snabb och smidig process så att ni kan fokusera på er kärnverksamhet.
+                </p>
+              </div>
+              <div className="card-brand p-6 hover:border-brand-yellow" style={{borderLeftColor: 'var(--color-yellow)'}}>
+                <h3 className="text-xl font-semibold text-brand-yellow mb-2">Kvalitetssäkring & Kontroll</h3>
+                <p className="text-slate-600">
+                  Garanterad kvalitet i varje steg. Med vår bakgrund inom industrilackering agerar vi som er oberoende expert. Vi kvalitetssäkrar hela processen, från förbehandling till slutinspektion, för att säkerställa att resultatet uppfyller era specifikationer och krav. Det är er trygghet för ett perfekt resultat, varje gång.
+                </p>
+              </div>
+            </div>
+          </div>
+        </section>
+
         <section id="process" className="py-20 bg-white relative">
           <div className="absolute inset-0 heritage-pattern"></div>
           <div className="container mx-auto px-6 text-center relative z-10">
@@ -530,7 +566,7 @@ export default function Page() {
                       Förfrågan & Teknisk Rådgivning
                       </h3>
                       <p className="text-slate-600">
-                      Allt börjar med er förfrågan. Istället för att bara ta emot den, agerar vi som er tekniska partner. Vi granskar underlaget, ställer rätt följdfrågor och säkerställer att alla specifikationer är kompletta. Detta minimerar risken för missförstånd och garanterar att jobbet blir rätt från start.   </p>
+                      Allt börjar med er förfrågan. Vi agerar direkt som er tekniska partner och med <strong>vårt unika digitala verktyg kan ni enkelt göra markeringar direkt på era ritningar</strong> för att specificera exakt vilka ytor som ska maskeras eller lackeras. Vi ställer rätt följdfrågor och säkerställer att allt är glasklart från start.   </p>
                     </>
                   )}
                   {n === 2 && (
@@ -567,234 +603,7 @@ export default function Page() {
         </section>
 
 
-        <section id="services" className="py-20 bg-white relative">
-          <div className="absolute inset-0 bg-gradient-to-br from-slate-50/50 to-white"></div>
-          <div className="container mx-auto px-6 text-center relative z-10">
-            <h2 className="section-title text-brand-blue">Rätt ytbehandling för varje unikt behov</h2>
-            <p className="section-subtitle">
-            Att välja rätt metod är avgörande för slutresultatet. Vi analyserar era krav på funktion, estetik och kostnadseffektivitet för att säkerställa att ert projekt får den optimala ytbehandlingen. Genom vårt nätverk erbjuder vi en komplett portfölj av industrins främsta metoder. Nedanför är ett axplock av vanliga ytbehandlingsmetoder.     </p>
-            <div className="max-w-4xl mx-auto text-left">
-              <div className="flex justify-center border-b border-slate-200 mb-8">
-                <button
-                  onClick={() => setActiveTab("blasting")}
-                  className={`tab-button text-lg py-3 px-6 border-b-2 border-transparent transition-colors duration-200 ${
-                    activeTab === "blasting" ? "border-brand-green text-brand-green font-semibold" : "text-slate-500 hover:text-brand-green"
-                  }`}
-                >
-                  Blästring
-                </button>
-                <button
-                  onClick={() => setActiveTab("corrosion")}
-                  className={`tab-button text-lg py-3 px-6 border-b-2 border-transparent transition-colors duration-200 ${
-                    activeTab === "corrosion" ? "border-brand-yellow text-brand-yellow font-semibold" : "text-slate-500 hover:text-brand-yellow"
-                  }`}
-                >
-                  Korrosionsskydd
-                </button>
-                <button
-                  onClick={() => setActiveTab("powder")}
-                  className={`tab-button text-lg py-3 px-6 border-b-2 border-transparent transition-colors duration-200 ${
-                    activeTab === "powder" ? "border-brand-orange text-brand-orange font-semibold" : "text-slate-500 hover:text-brand-orange"
-                  }`}
-                >
-                  Pulverlackering
-                </button>
-                <button
-                  onClick={() => setActiveTab("wet")}
-                  className={`tab-button text-lg py-3 px-6 border-b-2 border-transparent transition-colors duration-200 ${
-                    activeTab === "wet" ? "border-brand-blue text-brand-blue font-semibold" : "text-slate-500 hover:text-brand-blue"
-                  }`}
-                >
-                  Våtlackering
-                </button>
-                
-              </div>
-
-              {activeTab === "blasting" && (
-                <div data-content="blasting" className="space-y-6">
-                  <h3 className="text-2xl font-bold text-brand-green">
-                    Blästring: Grundläggande ytförberedelse
-                  </h3>
-                  <p className="text-slate-600">
-                    Blästring är en kritisk förbehandlingsmetod som säkerställer optimal vidhäftning för lackering. Genom att använda abrasiva medel under högt tryck avlägsnas orenheter, rost och gamla beläggningar, vilket skapar en ren och mottaglig yta för vidare behandling.
-                  </p>
-                  <div>
-                    <h4 className="text-xl font-semibold text-brand-green mb-2">
-                      Blästring i blästerskåp
-                    </h4>
-                    <p className="text-slate-600 mb-4">
-                      Blästrande bearbetning innesluten i ett skåp där abrasivt medel understödd av tryckluft skjutas ut mot arbetsstycket för att rengöra dess yta.
-                    </p>
-                    <h5 className="text-lg font-semibold text-brand-orange mb-2">
-                      Hur fungerar metoden
-                    </h5>
-                    <ol className="list-decimal list-inside space-y-2 text-slate-600">
-                      <li>
-                        <strong>Innesluten process:</strong> Bearbetningen sker innesluten i ett skåp. Genom fast monterade gummihandskar eller styrning vrids antingen arbetsstycket eller sprutmunstycket för att komma åt de ytor som skall blästras.
-                      </li>
-                      <li>
-                        <strong>Abrasiv accelerering:</strong> Ett abrasivt medel tillförs parallellt med tryckluft och accelereras upp i hastighet då det passerar blästermunstycket. Partiklarna slungas på så sätt mot arbetsstyckets yta och avlägsnar orenheter.
-                      </li>
-                      <li>
-                        <strong>Återvinning:</strong> Finare damm som skapas sugs upp medan blästermedlet och tyngre avverkade partiklar faller ner genom gallret och samlas i en behållare i botten. Från behållaren sugs åter igen blästermedlet upp och sprutas genom munstycket.
-                      </li>
-                      <li>
-                        <strong>Underhåll:</strong> Då blästermedlet slits samt att det blandas upp med tyngre avverkade partiklar från detaljen så måste det rengöras eller bytas regelbundet.
-                      </li>
-                    </ol>
-                  </div>
-                  <div>
-                    <h4 className="text-xl font-semibold text-brand-green mb-2">
-                      Fördelar och tillämpningar
-                    </h4>
-                    <p className="text-slate-600">
-                      Blästring är särskilt effektivt för att förbereda metaller inför lackering, då det skapar en optimal ytstruktur för vidhäftning. Metoden används ofta som försteg inför pulverlackering och våtlackering, och är avgörande för att säkerställa långvarigt korrosionsskydd och hög kvalitet på den slutliga lackeringen.
-                    </p>
-                  </div>
-                </div>
-              )}
-
-              {activeTab === "corrosion" && (
-                <div data-content="corrosion" className="space-y-6">
-                  <h3 className="text-2xl font-bold text-brand-yellow">
-                    Korrosionsskydd: Långsiktigt skydd för alla miljöer
-                  </h3>
-                  <p className="text-slate-600">
-                    Korrosionsskydd är avgörande för att säkerställa att metallkonstruktioner och komponenter bibehåller sin funktion och säkerhet över tid. Valet av material och beläggning påverkas av flera faktorer, där luftfuktighet och salt i luften har stor inverkan.
-                  </p>
-                  <div>
-                    <h4 className="text-xl font-semibold text-brand-green mb-2">
-                      Korrosivitetsklasser enligt SS-EN ISO 9223 och SS-EN ISO 12944-2
-                    </h4>
-                    <div className="space-y-4">
-                      <div className="border-l-4 border-brand-orange pl-4">
-                        <h5 className="text-lg font-semibold text-brand-orange mb-1">C1 - Mycket låg korrosion</h5>
-                        <p className="text-slate-600 text-sm">
-                          Miljö med mycket låg korrosion, exempelvis inomhus i uppvärmda utrymmen med torr luft och obetydliga mängder föroreningar. <strong>Rekommenderade ytbehandlingar:</strong> Elförzinkning, sendzimir, varmförzinkning, zink/nickel.
-                        </p>
-                      </div>
-                      <div className="border-l-4 border-brand-blue pl-4">
-                        <h5 className="text-lg font-semibold text-brand-blue mb-1">C2 - Låg korrosivitet</h5>
-                        <p className="text-slate-600 text-sm">
-                          Miljö med låg korrosivitet som icke uppvärmda utrymmen inomhus med varierande temperatur och luftfuktighet. Även utomhus i låga koncentrationer av luftföroreningar, landsbygdsområden. <strong>Rekommenderade ytbehandlingar:</strong> Sendzimir, varmförzinkning, zink/nickel.
-                        </p>
-                      </div>
-                      <div className="border-l-4 border-brand-green pl-4">
-                        <h5 className="text-lg font-semibold text-brand-green mb-1">C3 - Måttlig korrosivitet</h5>
-                        <p className="text-slate-600 text-sm">
-                          Miljöer med måttlig korrosivitet. Inomhusmiljöer med måttlig luftfuktighet och vissa luftföroreningar. Utomhus i måttliga mängder luftföroreningar samt stadsområden och områden med lätt industri. <strong>Rekommenderade ytbehandlingar:</strong> Varmförzinkad, zink/nickel.
-                        </p>
-                      </div>
-                      <div className="border-l-4 border-brand-yellow pl-4">
-                        <h5 className="text-lg font-semibold text-brand-yellow mb-1">C4 - Hög korrosivitet</h5>
-                        <p className="text-slate-600 text-sm">
-                          Miljö med hög korrosivitet – betydande mängder luftföroreningar i utomhusmiljöer eller måttliga mängder salt, industri och kustområden. Inomhusmiljö med hög luftfuktighet och stora mängder luftföroreningar. <strong>Rekommenderade ytbehandlingar:</strong> Varmförzinkad, zink/nickel, rostfri 304L.
-                        </p>
-                      </div>
-                      <div className="border-l-4 border-brand-red pl-4">
-                        <h5 className="text-lg font-semibold text-brand-red mb-1">C5-I - Industriell miljö med mycket hög korrosivitet</h5>
-                        <p className="text-slate-600 text-sm">
-                          Industriområden utomhus med tufft klimat och hög luftfuktighet. Kust- och havsområden med stora mängder salt. Permanent fuktkondensation i inomhusmiljö och stora mängder luftföroreningar. <strong>Rekommenderade ytbehandlingar:</strong> Rostfri 304LK och syrafast 316L.
-                        </p>
-                      </div>
-                      <div className="border-l-4 border-red-600 pl-4">
-                        <h5 className="text-lg font-semibold text-red-600 mb-1">C5-M - Marin miljö med mycket hög korrosivitet</h5>
-                        <p className="text-slate-600 text-sm">
-                          Utomhus miljöer som industri-, kust- och havsområden i subtropiska och tropiska klimat med salt och föroreningar, varvzoner. Inomhusmiljöer med extrem luftfuktighet, kondens och extremt tufft klimat. <strong>Rekommenderad ytbehandling:</strong> syrafast 316L.
-                        </p>
-                      </div>
-                    </div>
-                  </div>
-                  <div>
-                    <h4 className="text-xl font-semibold text-brand-green mb-2">
-                      Vår expertis
-                    </h4>
-                    <p className="text-slate-600">
-                      Vi hjälper dig att välja rätt korrosionsskydd baserat på din specifika miljö och tillämpning. Genom att följa internationella standarder och använda beprövade metoder säkerställer vi att dina komponenter får optimalt skydd för sin förväntade livslängd.
-                    </p>
-                  </div>
-                </div>
-              )}
-              
-              {activeTab === "powder" && (
-                <div data-content="powder" className="space-y-6">
-                  <h3 className="text-2xl font-bold text-brand-orange">
-                    Pulverlackering: Slitstarkhet och effektivitet
-                  </h3>
-                  <p className="text-slate-600">
-                    En miljövänlig och mycket slitstark metod där ett torrt, färgpigmenterat pulver appliceras elektrostatiskt på ett jordat objekt. Pulvret fäster vid ytan och härdas sedan i ugn, vilket får det att smälta samman till en jämn, hård och extremt tålig finish.
-                  </p>
-                  <div>
-                    <h4 className="text-xl font-semibold text-brand-green mb-2">
-                      Processen i detalj
-                    </h4>
-                    <ol className="list-decimal list-inside space-y-2 text-slate-600">
-                      <li>
-                        <strong>Förbehandling:</strong> Objektet rengörs noggrant, oftast genom blästring eller kemisk tvätt (t.ex. järnfosfatering), för att avlägsna alla orenheter och skapa en optimal yta för vidhäftning.
-                      </li>
-                      <li>
-                        <strong>Applicering:</strong> Med hjälp av en sprutpistol laddas pulverpartiklarna elektrostatiskt och sprayas mot det jordade objektet. Laddningen gör att pulvret dras till och täcker hela ytan jämnt.
-                      </li>
-                      <li>
-                        <strong>Härdning:</strong> Objektet förs in i en härdugn (ca 160-200°C) där pulvret smälter och flyter samman. Den kemiska reaktionen skapar ett hållbart och korslänkat färgskikt.
-                      </li>
-                      <li>
-                        <strong>Kvalitetskontroll:</strong> Efter avsvalning inspekteras ytan noggrant med avseende på täckning, glans, skikttjocklek och eventuella defekter.
-                      </li>
-                    </ol>
-                  </div>
-                  <div>
-                    <h4 className="text-xl font-semibold text-brand-green mb-2">
-                      Kvalitet & Standarder
-                    </h4>
-                    <p className="text-slate-600">
-                      Resultatet styrs av noggrann processkontroll. Kvalitetsnivån definieras ofta av krav på korrosionsskydd enligt <strong>ISO 12944</strong> för olika miljöer (C1-C5), samt krav på skikttjocklek (mäts i my, µm), vidhäftning (t.ex. gittersnittprov) och glansgrad.
-                    </p>
-                  </div>
-                </div>
-              )}
-
-              {activeTab === "wet" && (
-                <div data-content="wet" className="space-y-6">
-                  <h3 className="text-2xl font-bold text-brand-blue">
-                    Våtlackering: Flexibilitet och oöverträffad finish
-                  </h3>
-                  <p className="text-slate-600">
-                    En traditionell och extremt mångsidig metod där flytande färg appliceras med sprutpistol. Metoden är idealisk för material som inte tål värme, komplexa geometrier och när specifika estetiska krav på färg, textur och glans måste uppfyllas.
-                  </p>
-                  <div>
-                    <h4 className="text-xl font-semibold text-brand-green mb-2">
-                      Processen i detalj
-                    </h4>
-                    <ol className="list-decimal list-inside space-y-2 text-slate-600">
-                      <li>
-                        <strong>Förbehandling:</strong> Liksom vid pulverlackering är förbehandlingen kritisk. Metoder som slipning, blästring eller kemisk rengöring används för att säkerställa en ren och mottaglig yta. Ofta appliceras en primer/grundfärg för maximalt skydd och vidhäftning.
-                      </li>
-                      <li>
-                        <strong>Applicering:</strong> Färgen, som kan vara 1- eller 2-komponentsystem (färg + härdare), appliceras i en kontrollerad miljö (sprutbox) för att undvika damm och säkerställa en jämn yta. Flera skikt kan appliceras för att bygga upp önskat skydd och finish.
-                      </li>
-                      <li>
-                        <strong>Torkning/Härdning:</strong> Färgen får torka, antingen lufttorkande eller i en ugn vid låg temperatur. Härdningsprocessen gör att färgskiktet blir hårt och motståndskraftigt.
-                      </li>
-                      <li>
-                        <strong>Kvalitetskontroll:</strong> Finish, glans, kulörnoggrannhet och skikttjocklek kontrolleras noggrant för att säkerställa att resultatet motsvarar specifikationen.
-                      </li>
-                    </ol>
-                  </div>
-                  <div>
-                    <h4 className="text-xl font-semibold text-brand-green mb-2">
-                      Kvalitet & Standarder
-                    </h4>
-                    <p className="text-slate-600">
-                      Med våtlackering kan man bygga komplexa färgsystem med flera skikt (grundfärg, mellanstrykning, topplack) för att möta de allra tuffaste kraven, exempelvis för offshore- eller marin miljö enligt <strong>NORSOK</strong> eller <strong>ISO 12944</strong> (klass C5). Ytans finish kan varieras från helmatt till högblank, och även specialeffekter som metallic eller strukturlack är möjliga.
-                    </p>
-                  </div>
-                </div>
-              )}
-
-            </div>
-          </div>
-        </section>
+        {/* services moved after industries */}
 
 
         <section id="why-us" className="py-20 bg-white relative">
@@ -836,7 +645,7 @@ export default function Page() {
         <section id="industries" className="py-20 bg-gradient-to-br from-slate-50 to-white relative">
           <div className="absolute inset-0 heritage-pattern"></div>
           <div className="container mx-auto px-6 text-center relative z-10">
-            <h2 className="section-title text-brand-blue">Branscher inom industrilackering</h2>
+            <h2 className="section-title text-brand-blue">Expertis för din bransch</h2>
             <p className="section-subtitle">
               Ett axplock av de branscher vi arbetar med
             </p>
@@ -900,6 +709,39 @@ export default function Page() {
                   Additiv tillverkning, eller 3D-printing, har revolutionerat produktutvecklingen. För att en 3D-printad detalj ska gå från en rå prototyp till en fullt funktionell och estetiskt tilltalande slutprodukt krävs ofta en efterbehandling. Industrilackering spelar här en nyckelroll för att släta ut ytor, dölja lagerlinjer och ge produkten önskad färg, glans och skyddande egenskaper. Lackeringen kan förbättra både den visuella kvaliteten och de mekaniska egenskaperna, såsom UV-resistens och reptålighet. Detta öppnar upp för nya möjligheter att använda 3D-printade delar i allt från fordonsindustrin till konsumentprodukter.
                 </p>
               </div>
+            </div>
+          </div>
+        </section>
+
+        <section id="services" className="py-20 bg-white relative">
+          <div className="absolute inset-0 bg-gradient-to-br from-slate-50/50 to-white"></div>
+          <div className="container mx-auto px-6 text-center relative z-10">
+            <h2 className="section-title text-brand-blue">En komplett partner för all ytbehandling</h2>
+            <p className="section-subtitle">
+              Från kritisk förbehandling till avancerade ytskikt – vi specificerar och hanterar rätt metod för ert projekt. Ni beskriver behovet, vi levererar expertisen.
+            </p>
+            <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8 max-w-7xl mx-auto text-left">
+              <div className="card-brand p-6">
+                <h3 className="text-xl font-semibold text-slate-800 mb-2">Förbehandling & Rengöring</h3>
+                <p className="text-slate-600">Grunden för ett hållbart resultat. Vi hanterar allt från blästring och kemisk tvätt till avancerad laserrengöring för att garantera maximal vidhäftning.</p>
+              </div>
+              <div className="card-brand p-6">
+                <h3 className="text-xl font-semibold text-slate-800 mb-2">Pulverlackering</h3>
+                <p className="text-slate-600">För en extremt slitstark, kostnadseffektiv och miljövänlig yta. Perfekt för komponenter i tuffa miljöer och produktion i större serier.</p>
+              </div>
+              <div className="card-brand p-6">
+                <h3 className="text-xl font-semibold text-slate-800 mb-2">Våtlackering</h3>
+                <p className="text-slate-600">När kraven på finish, kulörprecision och flexibilitet är som högst. Idealisk för komplexa former och värmekänsliga material.</p>
+              </div>
+              <div className="card-brand p-6">
+                <h3 className="text-xl font-semibold text-slate-800 mb-2">Korrosionsskydd</h3>
+                <p className="text-slate-600">Vi specificerar rätt skyddssystem för alla miljöer, från C1 till C5, enligt gällande ISO-standarder för att maximera livslängden på er produkt.</p>
+              </div>
+            </div>
+            <div className="mt-12">
+              <a href="/ytbehandlingar" className="text-brand-blue font-semibold hover:underline">
+                Se alla våra ytbehandlingar & metoder →
+              </a>
             </div>
           </div>
         </section>
