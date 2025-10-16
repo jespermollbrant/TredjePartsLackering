@@ -22,6 +22,13 @@ const posts: Post[] = [
       "Vad betyder 'bra finish'? När är en defekt acceptabel? Vi går igenom branschpraxis som ger objektiva svar på subjektiva frågor.",
     imageAlt: "Närbild av en jämn, högglans lackerad yta",
   },
+  {
+    slug: "ylk-1-den-dolda-spelboken",
+    title: "YLK-1: Den dolda spelboken för industrilackering",
+    excerpt:
+      "Vad YLK-1 betyder i praktiken: ansvarsfördelning, kravställning och hur du undviker tvister.",
+    imageAlt: "Dokument och checklista för kravställning",
+  },
 ];
 
 export default function KunskapsbankPage() {
