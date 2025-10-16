@@ -234,6 +234,121 @@ export default function YtbehandlingarPage() {
           </div>
         </section>
 
+        <section className="py-20 bg-gradient-to-br from-slate-50/50 to-white">
+          <div className="container mx-auto px-6">
+            <div className="max-w-6xl mx-auto">
+              <h2 className="text-3xl font-bold text-center mb-12 text-brand-green">
+                4. Kemisk ytbeläggning
+              </h2>
+              <p className="text-lg text-slate-600 text-center mb-12 max-w-4xl mx-auto">
+                Autokatalytiska processer som skapar helt jämna och täta metallskikt – idealiskt för komplexa geometrier och invändiga ytor.
+              </p>
+
+              <div className="grid md:grid-cols-1 lg:grid-cols-2 gap-8 mb-16">
+                <Link href="/ytbehandlingar/kemisk-fornickling" className="card-brand p-6 hover:border-brand-green transition-all duration-300 group">
+                  <h3 className="text-xl font-semibold text-brand-green mb-3 group-hover:text-brand-orange transition-colors">
+                    Kemisk förnickling
+                  </h3>
+                  <p className="text-slate-600 mb-4">
+                    Extremt jämnt och korrosionsbeständigt nickel‑fosforskikt utan elektrisk ström.
+                  </p>
+                  <span className="text-brand-green font-medium group-hover:text-brand-orange transition-colors">
+                    Läs mer →
+                  </span>
+                </Link>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section className="py-20 bg-white relative">
+          <div className="absolute inset-0 heritage-pattern"></div>
+          <div className="container mx-auto px-6 relative z-10">
+            <div className="max-w-6xl mx-auto">
+              <h2 className="text-3xl font-bold text-center mb-12 text-brand-blue">
+                5. Elektrolytisk ytbehandling
+              </h2>
+              <p className="text-lg text-slate-600 text-center mb-12 max-w-4xl mx-auto">
+                Elektrolytiska processer för dekorativa och funktionella metallskikt – från anodisering till avancerade nickel/kromsystem och zink.
+              </p>
+
+              <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 mb-16">
+                <Link href="/ytbehandlingar/anodisering" className="card-brand p-6 hover:border-brand-blue transition-all duration-300 group">
+                  <h3 className="text-xl font-semibold text-brand-blue mb-3 group-hover:text-brand-orange transition-colors">
+                    Anodisering
+                  </h3>
+                  <p className="text-slate-600 mb-4">
+                    Hårt, korrosionsbeständigt och dekorativt oxidskikt på aluminium.
+                  </p>
+                  <span className="text-brand-blue font-medium group-hover:text-brand-orange transition-colors">
+                    Läs mer →
+                  </span>
+                </Link>
+
+                <Link href="/ytbehandlingar/glansforkromning" className="card-brand p-6 hover:border-brand-blue transition-all duration-300 group">
+                  <h3 className="text-xl font-semibold text-brand-blue mb-3 group-hover:text-brand-orange transition-colors">
+                    Hexavalent glansförkromning
+                  </h3>
+                  <p className="text-slate-600 mb-4">
+                    Klassisk spegelfinish med mycket hård och slitstark yta.
+                  </p>
+                  <span className="text-brand-blue font-medium group-hover:text-brand-orange transition-colors">
+                    Läs mer →
+                  </span>
+                </Link>
+
+                <Link href="/ytbehandlingar/multilagerfornickling" className="card-brand p-6 hover:border-brand-blue transition-all duration-300 group">
+                  <h3 className="text-xl font-semibold text-brand-blue mb-3 group-hover:text-brand-orange transition-colors">
+                    Multilagerförnickling
+                  </h3>
+                  <p className="text-slate-600 mb-4">
+                    Skiktad nickelstruktur som drastiskt förlänger korrosionslivslängden.
+                  </p>
+                  <span className="text-brand-blue font-medium group-hover:text-brand-orange transition-colors">
+                    Läs mer →
+                  </span>
+                </Link>
+
+                <Link href="/ytbehandlingar/elektroplatering-tenn" className="card-brand p-6 hover:border-brand-blue transition-all duration-300 group">
+                  <h3 className="text-xl font-semibold text-brand-blue mb-3 group-hover:text-brand-orange transition-colors">
+                    Elektroplätering med tenn
+                  </h3>
+                  <p className="text-slate-600 mb-4">
+                    Lödbar, livsmedelssäker och korrosionsskyddande tennyta.
+                  </p>
+                  <span className="text-brand-blue font-medium group-hover:text-brand-orange transition-colors">
+                    Läs mer →
+                  </span>
+                </Link>
+
+                <Link href="/ytbehandlingar/elforzinkning" className="card-brand p-6 hover:border-brand-blue transition-all duration-300 group">
+                  <h3 className="text-xl font-semibold text-brand-blue mb-3 group-hover:text-brand-orange transition-colors">
+                    Elförzinkning
+                  </h3>
+                  <p className="text-slate-600 mb-4">
+                    Kostnadseffektivt katodiskt rostskydd med passivering.
+                  </p>
+                  <span className="text-brand-blue font-medium group-hover:text-brand-orange transition-colors">
+                    Läs mer →
+                  </span>
+                </Link>
+
+                <Link href="/ytbehandlingar/surzinkning" className="card-brand p-6 hover:border-brand-blue transition-all duration-300 group">
+                  <h3 className="text-xl font-semibold text-brand-blue mb-3 group-hover:text-brand-orange transition-colors">
+                    Surzinkning
+                  </h3>
+                  <p className="text-slate-600 mb-4">
+                    Snabb och högblank zinkbeläggning med stark estetik.
+                  </p>
+                  <span className="text-brand-blue font-medium group-hover:text-brand-orange transition-colors">
+                    Läs mer →
+                  </span>
+                </Link>
+              </div>
+            </div>
+          </div>
+        </section>
+
         <section className="py-20 bg-gradient-to-br from-slate-800 via-slate-900 to-slate-800 text-white relative overflow-hidden">
           <div className="absolute inset-0 bg-gradient-brand opacity-10"></div>
           <div className="container mx-auto px-6 relative z-10 text-center">
