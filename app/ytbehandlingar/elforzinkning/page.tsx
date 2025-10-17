@@ -5,39 +5,7 @@ import Link from "next/link";
 export default function ElforzinkningPage() {
   return (
     <div className="text-slate-700">
-      <header className="bg-white/90 backdrop-blur-md sticky top-0 z-50 shadow-sm border-b border-brand-orange/20">
-        <nav className="container mx-auto px-6 py-4 flex justify-between items-center">
-          <Link href="/" className="flex items-center space-x-3">
-            <span className="text-2xl font-bold text-slate-800 text-brand-orange">
-              3. P. Lackering
-              <span className="text-slate-800 text-sm"> - Förmedlare & Oberoende Expert av Lackering</span>
-            </span>
-          </Link>
-          <div className="hidden md:flex items-center space-x-6">
-            <Link href="/#process" className="text-slate-600 hover:text-brand-orange transition-colors duration-200">
-              Så fungerar det
-            </Link>
-            <Link href="/ytbehandlingar" className="text-slate-600 hover:text-brand-blue transition-colors duration-200">
-              Våra Ytbehandlingar
-            </Link>
-            <Link href="/#industries" className="text-slate-600 hover:text-brand-red transition-colors duration-200">
-              Branscher
-            </Link>
-            <Link href="/#why-us" className="text-slate-600 hover:text-brand-yellow transition-colors duration-200">
-              Varför Oss?
-            </Link>
-            <Link href="/om" className="text-slate-600 hover:text-brand-green transition-colors duration-200">
-              Om oss
-            </Link>
-          </div>
-          <Link
-            href="/#quote"
-            className="btn-brand"
-          >
-            Offertförfrågan
-          </Link>
-        </nav>
-      </header>
+      
 
       <main>
         <section className="bg-gradient-brand py-20 md:py-32 relative overflow-hidden">
