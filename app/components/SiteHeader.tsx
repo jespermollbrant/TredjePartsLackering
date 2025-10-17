@@ -93,7 +93,7 @@ export default function SiteHeader() {
   };
 
   return (
-    <header className="bg-white/90 backdrop-blur-md sticky top-0 z-50 shadow-sm border-b border-brand-orange/20">
+    <header className="bg-white/90 backdrop-blur-md sticky top-0 z-50 shadow-sm">
       <nav className="container mx-auto px-6 py-4 flex justify-between items-center">
         <Link href="/" className="flex items-center space-x-3">
           <span className="text-2xl font-bold text-slate-800 text-brand-orange">

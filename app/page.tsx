@@ -464,21 +464,67 @@ export default function Page() {
       {/* Header moved to global layout */}
 
       <main>
-        <section id="hero" className="bg-gradient-brand py-20 md:py-32 relative overflow-hidden">
-          <div className="absolute inset-0 bg-black/20"></div>
-          <div className="container mx-auto px-6 text-center relative z-10">
-            <h1 className="text-4xl md:text-6xl font-bold leading-tight mb-4 text-white">
-            Industrilackering utan risk eller krångel
-            </h1>
-            <p className="text-lg md:text-xl text-white/90 max-w-3xl mx-auto mb-8">
-            Vi är en oberoende expertpartner och förmedlare av industrilackering. Istället för att lägga tid på att hitta och kvalitetssäkra leverantörer, har vi tillgång till ett nätverk av beprövade specialister. Beskriv ert behov, så hanterar vi hela processen – från analys och offert till logistik och garanterad kvalitet.  </p>
-            <a
-              href="#quote"
-              className="bg-white text-brand-orange font-bold py-4 px-8 rounded-lg text-lg hover:bg-slate-50 transition-all duration-300 shadow-lg hover:shadow-xl transform hover:-translate-y-1"
-            >
-              Starta din offertförfrågan
-            </a>
+        <section id="hero" className="relative bg-neutral-900 overflow-hidden">
+          {/* Subtilt bakgrundsmönster som påminner om en blueprint/ritning */}
+          <div
+            className="absolute inset-0 opacity-10"
+            style={{
+              backgroundImage:
+                'linear-gradient(#404040 1px, transparent 1px), linear-gradient(to right, #404040 1px, transparent 1px)',
+              backgroundSize: '40px 40px',
+            }}
+          />
+
+          <div className="container mx-auto px-6 relative z-10">
+            <div className="grid md:grid-cols-2 gap-8 items-center py-24 md:py-32">
+              {/* Vänsterkolumn: Budskap och Call to Action */}
+              <div className="text-center md:text-left">
+                <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight leading-tight mb-6 text-white">
+                  Industrilackering utan risk och krångel
+                </h1>
+                <p className="text-lg md:text-xl text-neutral-300 max-w-xl mx-auto md:mx-0 mb-10">
+                  Som er oberoende expertpartner tar vi helhetsansvar för era lackeringsprojekt. Vi specificerar, väljer rätt specialist och projektleder från start till mål – så att ni kan fokusera på er kärnverksamhet.
+                </p>
+                <div className="flex flex-col sm:flex-row gap-4 justify-center md:justify-start">
+                  <a href="#quote" className="btn-brand text-lg py-3 px-8">
+                    Starta offertförfrågan
+                  </a>
+                </div>
+              </div>
+
+              {/* Högerkolumn: Abstrakt designelement */}
+              <div className="relative hidden md:flex h-96 items-center justify-center">
+                {/* Animerade lager som symboliserar process/skikt */}
+                <div className="absolute w-full h-full animate-fade-in-up" style={{ animationDelay: '0.6s' }}>
+                  <div className="absolute top-1/4 left-1/4 w-1/2 h-1/2 rounded-lg bg-neutral-700/20 backdrop-blur-sm border border-neutral-600/50 transform -rotate-12" />
+                </div>
+                <div className="absolute w-full h-full animate-fade-in-up" style={{ animationDelay: '0.4s' }}>
+                  <div className="absolute top-1/4 left-1/4 w-2/3 h-2/3 rounded-lg bg-neutral-700/30 backdrop-blur-sm border border-neutral-600/50 transform -rotate-6" />
+                </div>
+                <div className="absolute w-full h-full animate-fade-in-up" style={{ animationDelay: '0.2s' }}>
+                  <div className="absolute top-1/4 left-1/4 w-3/4 h-3/4 rounded-lg bg-neutral-800/50 backdrop-blur-sm border border-neutral-600/50 flex items-center justify-center p-4">
+                    {/* Ikoner för att förstärka budskapet */}
+                    <div className="flex items-center gap-6 text-neutral-400">
+                      <div className="text-center">
+                        <svg className="w-8 h-8 mx-auto text-brand-orange" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" d="M9 12.75L11.25 15 15 9.75M21 12a9 9 0 11-18 0 9 9 0 0118 0z" /></svg>
+                        <span className="text-xs mt-2 block">Kvalitetskontroll</span>
+                      </div>
+                      <div className="text-center">
+                        <svg className="w-8 h-8 mx-auto text-brand-orange" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" d="M3.75 13.5l10.5-11.25L12 10.5h8.25L9.75 21.75 12 13.5H3.75z" /></svg>
+                        <span className="text-xs mt-2 block">Effektivitet</span>
+                      </div>
+                      <div className="text-center">
+                        <svg className="w-8 h-8 mx-auto text-brand-orange" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" d="M9 12h3.75M9 15h3.75M9 18h3.75m3.75H18a2.25 2.25 0 002.25-2.25V6.108c0-1.135-.845-2.098-1.976-2.192a48.424 48.424 0 00-1.123-.08m-5.801 0c-.065.21-.1.433-.1.664 0.414.336.75.75.75h4.5a.75.75 0 00.75-.75c0-.231-.035-.454-.1-.664M6.75 7.5h10.5a2.25 2.25 0 012.25 2.25v7.5a2.25 2.25 0 01-2.25 2.25H6.75a2.25 2.25 0 01-2.25-2.25v-7.5a2.25 2.25 0 012.25-2.25z" /></svg>
+                        <span className="text-xs mt-2 block">Flexibilitet</span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
           </div>
+
+        
         </section>
 
         <section id="why-us" className="py-20 bg-white relative">
