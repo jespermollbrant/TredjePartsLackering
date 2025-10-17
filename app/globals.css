@@ -51,6 +51,87 @@ body {
   font-family: Arial, Helvetica, sans-serif;
 }
 
+/* Readable, engaging article typography (replaces tailwind-typography) */
+.prose {
+  color: #111827; /* neutral-900 */
+  line-height: 1.75;
+}
+.prose h1,
+.prose h2,
+.prose h3,
+.prose h4 {
+  color: #0f172a; /* slate-900 */
+  line-height: 1.25;
+  font-weight: 700;
+  margin-top: 2rem;
+  margin-bottom: 1rem;
+}
+.prose h1 { font-size: 2rem; }
+.prose h2 { font-size: 1.5rem; }
+.prose h3 { font-size: 1.25rem; }
+.prose p {
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+  color: #374151; /* neutral-700 */
+}
+.prose a {
+  color: #c2410c; /* orange-600 */
+  text-underline-offset: 3px;
+}
+.prose a:hover { color: #9a3412; }
+.prose strong { color: #111827; }
+.prose em { color: #111827; }
+.prose ul,
+.prose ol {
+  margin-top: 1rem;
+  margin-bottom: 1.5rem;
+  padding-left: 1.25rem;
+  color: #374151;
+}
+.prose li { margin-top: 0.5rem; margin-bottom: 0.5rem; }
+.prose ul li { list-style: disc; }
+.prose ol li { list-style: decimal; }
+.prose blockquote {
+  margin: 1.5rem 0;
+  padding-left: 1rem;
+  border-left: 4px solid #e5e7eb; /* neutral-200 */
+  color: #374151;
+  font-style: italic;
+}
+.prose img {
+  border-radius: 0.5rem;
+  box-shadow: 0 10px 15px -3px rgba(0,0,0,0.1), 0 4px 6px -2px rgba(0,0,0,0.05);
+}
+.prose hr {
+  border: 0;
+  border-top: 1px solid #e5e7eb;
+  margin: 2rem 0;
+}
+.prose code {
+  background: #f3f4f6;
+  padding: 0.15rem 0.35rem;
+  border-radius: 0.25rem;
+  font-family: var(--font-geist-mono, ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace);
+  font-size: 0.95em;
+}
+.prose pre {
+  background: #0f172a;
+  color: #e5e7eb;
+  padding: 1rem;
+  border-radius: 0.5rem;
+  overflow-x: auto;
+}
+.prose pre code { background: transparent; padding: 0; }
+
+/* Utility variants often used alongside prose */
+.prose .lead { font-size: 1.125rem; color: #374151; }
+.prose .muted { color: #6b7280; }
+.prose .kicker { letter-spacing: .08em; text-transform: uppercase; font-weight: 700; color: #c2410c; }
+
+/* Spacing refinements for the header/meta area commonly used in posts */
+.prose .post-meta { color: #64748b; font-size: .9rem; }
+.prose .post-header { border-bottom: 1px solid #e5e7eb; padding-bottom: 1rem; margin-bottom: 1.5rem; }
+
 /* Custom utility classes for the color palette */
 .text-brand-orange { color: var(--color-orange); }
 .text-brand-blue { color: var(--color-blue); }

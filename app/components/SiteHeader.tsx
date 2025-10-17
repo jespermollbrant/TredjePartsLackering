@@ -44,6 +44,8 @@ export default function SiteHeader() {
             className="relative"
             onMouseEnter={() => setServicesOpen(true)}
             onMouseLeave={() => setServicesOpen(false)}
+            onFocus={() => setServicesOpen(true)}
+            onBlur={() => setServicesOpen(false)}
           >
             <button
               type="button"
@@ -51,7 +53,6 @@ export default function SiteHeader() {
               aria-haspopup="true"
               aria-expanded={servicesOpen ? "true" : "false"}
               onFocus={() => setServicesOpen(true)}
-              onBlur={() => setServicesOpen(false)}
             >
               Tjänster
               <svg className="ml-2 h-4 w-4 text-slate-400" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
@@ -60,7 +61,7 @@ export default function SiteHeader() {
             </button>
             {servicesOpen && (
               <div
-                className="absolute left-0 mt-2 w-64 rounded-md border border-slate-200 bg-white shadow-lg z-50"
+                className="absolute left-0 top-full w-64 rounded-md border border-slate-200 bg-white shadow-lg z-50 pt-2"
                 role="menu"
                 aria-label="Tjänster"
               >

@@ -32,7 +32,7 @@ export default function KontaktPage() {
           <p className="mt-2 text-slate-700">
             Använd vårt formulär så guidar vi dig genom det tekniska underlaget och återkommer snabbt.
           </p>
-          <a href="/\#quote" className="mt-4 inline-flex rounded-md bg-orange-600 px-4 py-2 text-white font-semibold hover:bg-orange-700">
+          <a href="https://www.3plackering.com/#quote" className="mt-4 inline-flex rounded-md bg-orange-600 px-4 py-2 text-white font-semibold hover:bg-orange-700">
             Gå till offertförfrågan
           </a>
         </div>
