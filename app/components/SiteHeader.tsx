@@ -1,12 +1,96 @@
 "use client";
 
-import { useState } from "react";
+import { useEffect, useRef, useState, useCallback } from "react";
 import Link from "next/link";
 
 export default function SiteHeader() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [mobileServicesOpen, setMobileServicesOpen] = useState(false);
   const [servicesOpen, setServicesOpen] = useState(false);
+
+  // Desktop services menu refs and keyboard navigation
+  const servicesButtonRef = useRef<HTMLButtonElement | null>(null);
+  const servicesMenuRef = useRef<HTMLDivElement | null>(null);
+  const servicesItemsRef = useRef<Array<HTMLAnchorElement | null>>([]);
+
+  const closeServicesMenu = useCallback(() => {
+    setServicesOpen(false);
+    // Return focus to the button when menu closes
+    if (servicesButtonRef.current) {
+      servicesButtonRef.current.focus();
+    }
+  }, []);
+
+  // Click outside to close
+  useEffect(() => {
+    function onDocumentClick(event: MouseEvent) {
+      if (!servicesOpen) return;
+      const target = event.target as Node;
+      if (
+        servicesMenuRef.current &&
+        !servicesMenuRef.current.contains(target) &&
+        servicesButtonRef.current &&
+        !servicesButtonRef.current.contains(target)
+      ) {
+        closeServicesMenu();
+      }
+    }
+    function onDocumentKeydown(event: KeyboardEvent) {
+      if (!servicesOpen) return;
+      if (event.key === "Escape") {
+        event.preventDefault();
+        closeServicesMenu();
+      }
+    }
+    document.addEventListener("mousedown", onDocumentClick);
+    document.addEventListener("keydown", onDocumentKeydown);
+    return () => {
+      document.removeEventListener("mousedown", onDocumentClick);
+      document.removeEventListener("keydown", onDocumentKeydown);
+    };
+  }, [servicesOpen, closeServicesMenu]);
+
+  // Open menu and move focus to first item
+  const openServicesMenu = useCallback(() => {
+    setServicesOpen(true);
+    // Focus first item after paint
+    requestAnimationFrame(() => {
+      const firstItem = servicesItemsRef.current[0];
+      if (firstItem) firstItem.focus();
+    });
+  }, []);
+
+  // Keyboard handling on the button
+  const onServicesButtonKeyDown = (e: React.KeyboardEvent<HTMLButtonElement>) => {
+    if (e.key === "ArrowDown" || e.key === "Enter" || e.key === " ") {
+      e.preventDefault();
+      openServicesMenu();
+    }
+  };
+
+  // Keyboard navigation within the menu
+  const onServicesMenuKeyDown = (e: React.KeyboardEvent<HTMLDivElement>) => {
+    const items = servicesItemsRef.current.filter(Boolean) as HTMLAnchorElement[];
+    const activeIndex = items.findIndex((el) => el === document.activeElement);
+    if (e.key === "ArrowDown") {
+      e.preventDefault();
+      const next = items[(activeIndex + 1) % items.length];
+      if (next) next.focus();
+    } else if (e.key === "ArrowUp") {
+      e.preventDefault();
+      const prev = items[(activeIndex - 1 + items.length) % items.length];
+      if (prev) prev.focus();
+    } else if (e.key === "Home") {
+      e.preventDefault();
+      if (items[0]) items[0].focus();
+    } else if (e.key === "End") {
+      e.preventDefault();
+      if (items[items.length - 1]) items[items.length - 1].focus();
+    } else if (e.key === "Tab") {
+      // Close on tab to maintain natural tab flow
+      closeServicesMenu();
+    }
+  };
 
   return (
     <header className="bg-white/90 backdrop-blur-md sticky top-0 z-50 shadow-sm border-b border-brand-orange/20">
@@ -40,19 +124,17 @@ export default function SiteHeader() {
           </svg>
         </button>
         <div className="hidden md:flex items-center space-x-6">
-          <div
-            className="relative"
-            onMouseEnter={() => setServicesOpen(true)}
-            onMouseLeave={() => setServicesOpen(false)}
-            onFocus={() => setServicesOpen(true)}
-            onBlur={() => setServicesOpen(false)}
-          >
+          <div className="relative">
             <button
+              ref={servicesButtonRef}
+              id="services-menu-button"
               type="button"
               className="text-slate-600 hover:text-brand-orange transition-colors duration-200 inline-flex items-center"
-              aria-haspopup="true"
+              aria-haspopup="menu"
               aria-expanded={servicesOpen ? "true" : "false"}
-              onFocus={() => setServicesOpen(true)}
+              aria-controls="services-menu"
+              onClick={() => (servicesOpen ? closeServicesMenu() : openServicesMenu())}
+              onKeyDown={onServicesButtonKeyDown}
             >
               Tjänster
               <svg className="ml-2 h-4 w-4 text-slate-400" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
@@ -61,21 +143,52 @@ export default function SiteHeader() {
             </button>
             {servicesOpen && (
               <div
+                ref={servicesMenuRef}
+                id="services-menu"
                 className="absolute left-0 top-full w-64 rounded-md border border-slate-200 bg-white shadow-lg z-50 pt-2"
                 role="menu"
-                aria-label="Tjänster"
+                aria-labelledby="services-menu-button"
+                onKeyDown={onServicesMenuKeyDown}
               >
                 <div className="py-2">
-                  <Link href="/ytbehandlingar" className="block px-4 py-2 text-sm text-slate-700 hover:bg-slate-50" role="menuitem">
+                  <Link
+                    href="/ytbehandlingar"
+                    ref={(el) => { servicesItemsRef.current[0] = el; }}
+                    className="block px-4 py-2 text-sm text-slate-700 hover:bg-slate-50 focus:bg-slate-50 focus:outline-none"
+                    role="menuitem"
+                    tabIndex={-1}
+                    onClick={closeServicesMenu}
+                  >
                     Översikt Ytbehandlingar
                   </Link>
-                  <Link href="/ytbehandlingar/pulverlackering" className="block px-4 py-2 text-sm text-slate-700 hover:bg-slate-50" role="menuitem">
+                  <Link
+                    href="/ytbehandlingar/pulverlackering"
+                    ref={(el) => { servicesItemsRef.current[1] = el; }}
+                    className="block px-4 py-2 text-sm text-slate-700 hover:bg-slate-50 focus:bg-slate-50 focus:outline-none"
+                    role="menuitem"
+                    tabIndex={-1}
+                    onClick={closeServicesMenu}
+                  >
                     Pulverlackering
                   </Link>
-                  <Link href="/ytbehandlingar/vatlackering" className="block px-4 py-2 text-sm text-slate-700 hover:bg-slate-50" role="menuitem">
+                  <Link
+                    href="/ytbehandlingar/vatlackering"
+                    ref={(el) => { servicesItemsRef.current[2] = el; }}
+                    className="block px-4 py-2 text-sm text-slate-700 hover:bg-slate-50 focus:bg-slate-50 focus:outline-none"
+                    role="menuitem"
+                    tabIndex={-1}
+                    onClick={closeServicesMenu}
+                  >
                     Våtlackering
                   </Link>
-                  <Link href="/ytbehandlingar/blastring" className="block px-4 py-2 text-sm text-slate-700 hover:bg-slate-50" role="menuitem">
+                  <Link
+                    href="/ytbehandlingar/blastring"
+                    ref={(el) => { servicesItemsRef.current[3] = el; }}
+                    className="block px-4 py-2 text-sm text-slate-700 hover:bg-slate-50 focus:bg-slate-50 focus:outline-none"
+                    role="menuitem"
+                    tabIndex={-1}
+                    onClick={closeServicesMenu}
+                  >
                     Förbehandling & Rengöring
                   </Link>
                 </div>
@@ -110,7 +223,14 @@ export default function SiteHeader() {
               className="w-full flex items-center justify-between py-2 text-slate-700"
               aria-controls="mobile-services"
               aria-expanded={mobileServicesOpen ? "true" : "false"}
+              aria-haspopup="true"
               onClick={() => setMobileServicesOpen((v) => !v)}
+              onKeyDown={(e) => {
+                if (e.key === "Escape") {
+                  e.preventDefault();
+                  setMobileServicesOpen(false);
+                }
+              }}
             >
               <span>Tjänster</span>
               <svg className="h-5 w-5 text-slate-500" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
@@ -122,11 +242,11 @@ export default function SiteHeader() {
               </svg>
             </button>
             {mobileServicesOpen && (
-              <div id="mobile-services" className="pl-4 space-y-1 pb-2">
-                <Link href="/ytbehandlingar" className="block py-2 text-slate-700">Översikt Ytbehandlingar</Link>
-                <Link href="/ytbehandlingar/pulverlackering" className="block py-2 text-slate-700">Pulverlackering</Link>
-                <Link href="/ytbehandlingar/vatlackering" className="block py-2 text-slate-700">Våtlackering</Link>
-                <Link href="/ytbehandlingar/blastring" className="block py-2 text-slate-700">Förbehandling & Rengöring</Link>
+              <div id="mobile-services" className="pl-4 space-y-1 pb-2" role="menu" aria-label="Tjänster">
+                <Link href="/ytbehandlingar" className="block py-2 text-slate-700" role="menuitem" onClick={() => setMobileServicesOpen(false)}>Översikt Ytbehandlingar</Link>
+                <Link href="/ytbehandlingar/pulverlackering" className="block py-2 text-slate-700" role="menuitem" onClick={() => setMobileServicesOpen(false)}>Pulverlackering</Link>
+                <Link href="/ytbehandlingar/vatlackering" className="block py-2 text-slate-700" role="menuitem" onClick={() => setMobileServicesOpen(false)}>Våtlackering</Link>
+                <Link href="/ytbehandlingar/blastring" className="block py-2 text-slate-700" role="menuitem" onClick={() => setMobileServicesOpen(false)}>Förbehandling & Rengöring</Link>
               </div>
             )}
             <a href="#industries" className="block py-2 text-slate-700">Branscher</a>
